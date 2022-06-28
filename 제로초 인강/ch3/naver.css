@@ -1,0 +1,34 @@
+/*사용자에게는 안보이지만 screen reader에는 나타남*/
+.blind {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  margin: -1px;
+  width: 1px;
+  height: 1px;
+}
+
+#header-center {
+  margin: 0 auto;
+  width: 1080px;
+}
+
+/* 자식 선택자*/
+#header-search > h1 {
+  width: 280px;
+  display: inline-block;
+}
+
+#header-search h2 {
+  display: none;
+}
+
+#header-search fieldset {
+  width: 520px;
+  display: inline-block;
+}
+
+/* 자손 선택자
+#header-center h1 {
+}
+*/

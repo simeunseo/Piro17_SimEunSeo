@@ -3,7 +3,7 @@
   width: 1080px;
 }
 
-/* 자식 선택자*/
+/* ??? ??????*/
 #header-search > h1 {
   width: 280px;
   display: inline-block;
@@ -18,7 +18,7 @@
   display: inline-block;
 }
 
-/* 자손 선택자
-#header-center h1 {
-}
-*/
+/* ??? ??????
+  #header-center h1 {
+  }
+  */
