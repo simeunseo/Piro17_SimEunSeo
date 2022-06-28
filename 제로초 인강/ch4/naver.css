@@ -29,7 +29,7 @@ body {
   height: 1px;
 }
 
-#header-center {
+.center-align {
   margin: 0 auto;
   width: 1080px;
 }
@@ -99,4 +99,51 @@ body {
   height: 25px;
   display: inline-block;
   background-size: 500px 500px;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  display: inline-block;
+}
+
+nav li span:first-child {
+  height: 16px;
+  display: inline-block;
+  background-image: url(https://s.pstatic.net/static/www/img/uit/2019/sp_nav.png);
+  background-repeat: no-repeat;
+}
+
+nav li:first-child span:first-child {
+  width: 25px;
+  background-position: 0 -285px;
+}
+
+nav li:nth-child(2) span:first-child {
+  width: 27px;
+  background-position: -279px -52px;
+}
+
+nav li:nth-child(3) span:first-child {
+  width: 40px;
+  background-position: -100px -182px;
+}
+
+nav li:nth-child(4) span:first-child {
+  width: 40px;
+  background-position: -101px -156px;
+}
+
+nav li:nth-child(5) span:first-child {
+  width: 26px;
+  background-position: -279px -156px;
+}
+
+nav li:nth-child(6) span:first-child {
+  width: 25px;
+  background-position: -70px -285px;
 }
