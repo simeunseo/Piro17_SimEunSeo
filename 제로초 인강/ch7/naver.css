@@ -306,6 +306,23 @@ nav ul {
   position: absolute;
   top: -15px;
   right: 0;
+  z-index: 100;
+}
+
+#z-example {
+  position: absolute;
+  background: yellow;
+  width: 100px;
+  height: 100px;
+  z-index: 1;
+}
+
+#z-inner {
+  position: absolute;
+  background: red;
+  width: 50px;
+  height: 50px;
+  z-index: 1000;
 }
 
 #search-ranking:hover ul {
@@ -335,9 +352,9 @@ main {
 }
 
 #main-first-block {
-  vertical-align: top;
   display: inline-block;
   width: 100%;
+  vertical-align: top;
 }
 
 #main-ad {
@@ -358,6 +375,34 @@ main {
   margin-bottom: 8px;
 }
 
+#main-login .login-wrapper {
+  padding: 15px 25px;
+}
+
+#main-login .login-wrapper a {
+  display: block;
+}
+
+#main-login .login-text {
+  color: #888;
+  font-size: 12px;
+  line-height: 14px;
+}
+
+#main-login .login-image {
+  margin-top: 12px;
+  background: url(./sp_login.png) 0 -47px no-repeat;
+  display: inline-block;
+  width: 280px;
+  height: 37px;
+}
+
+#main-second-block {
+  display: inline-block;
+  vertical-align: top;
+  margin-bottom: 8px;
+}
+
 #main-second-block .float-left:first-child {
   width: 740px;
   margin-right: 8px;
@@ -373,10 +418,7 @@ main {
   width: 740px;
   height: 46px;
   background-color: white;
-  margin-right: 8px;
   margin-bottom: 8px;
-  float: left;
-  vertical-align: top;
 }
 
 #main-ytn h3,

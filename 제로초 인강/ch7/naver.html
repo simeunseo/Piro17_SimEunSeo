@@ -1,19 +1,17 @@
-<!--콘솔창에 document.head.parentNode.removeChild(document.head); 치면 css 없어짐-->
-
 <!DOCTYPE html>
 <html lang="ko">
   <head>
-    <meta charset="UTF-8" />
-    <title>naver</title>
+    <meta charset="utf-8" />
+    <title>네이버</title>
     <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" />
     <link rel="stylesheet" href="./naver.css" />
   </head>
   <body>
     <header>
       <div class="center-align">
-        <!--가운데 정렬 용 div-->
+        <!-- 가운데 정렬용 div -->
         <div id="header-top">
-          <span>네이버를 시작페이지로 | </span>
+          <span>네이버를 시작페이지로 > | </span>
           <span>쥬니어네이버 | </span>
           <span>해피빈</span>
         </div>
@@ -24,16 +22,21 @@
             </h1>
           </a>
           <h2 class="blind">검색창</h2>
-          <fieldset>
-            <legend class="blind">검색</legend>
-            <input />
-            <span id="search-keyboard"></span>
-            <span id="search-history"></span>
-            <button>
-              <span class="blind">검색</span>
-              <span id="search-image"> </span>
-            </button>
-          </fieldset>
+          <form
+            class="inline-block"
+            action="https://search.naver.com/search.naver?sm=top_hty&fbm=0&ie=utf8&query="
+          >
+            <fieldset>
+              <legend class="blind">검색</legend>
+              <input />
+              <span id="search-keyboard"></span>
+              <span id="search-history"></span>
+              <button type="submit">
+                <span class="blind">검색</span>
+                <span id="search-image"></span>
+              </button>
+            </fieldset>
+          </form>
         </div>
       </div>
     </header>
@@ -89,6 +92,8 @@
           </ul>
         </div>
         <ul id="nav-menu">
+          <!-- unordered list -->
+          <!-- ol 태그도 있어요 ordered list -->
           <li>
             <a href="">
               <span class="nav-item-mail"></span>
@@ -158,6 +163,12 @@
           <!-- list item -->
         </ul>
         <div class="nav-divider"></div>
+        <ul>
+          <li class="more">
+            <a href=""><span></span><span class="blind">더보기</span></a>
+          </li>
+          <!-- list item -->
+        </ul>
       </div>
     </nav>
     <main>
@@ -166,10 +177,18 @@
           <div id="main-ad"></div>
           <div id="main-login">
             <h3>로그인</h3>
+            <div class="login-wrapper">
+              <a
+                href="https://nid.naver.com/nidlogin.login?mode=form&url=https%3A%2F%2Fwww.naver.com"
+              >
+                <span class="blind">NAVER 로그인</span>
+                <span class="login-image"></span>
+              </a>
+            </div>
           </div>
         </div>
         <div id="main-second-block">
-          <div class="inline-block">
+          <div class="float-left">
             <div id="main-ytn">
               <h3>연합뉴스</h3>
               <ol>
@@ -200,7 +219,7 @@
               </ul>
             </div>
           </div>
-          <div class="inline-block">
+          <div class="float-left">
             <div id="main-weather"></div>
             <div id="main-second-ad"></div>
           </div>
