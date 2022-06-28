@@ -22,6 +22,10 @@ h6 {
   display: inline-block;
 }
 
+.float-left {
+  float: left;
+}
+
 #fixed {
   position: fixed;
   bottom: 50px;
@@ -79,13 +83,13 @@ header {
 }
 
 #header-search h1 {
-  width: 198px;
+  width: 222px;
   height: 48px;
   display: inline-block;
-  /*background-image: url(./sp_search.png);*/
-  /*background-position: -4px -10px;*/
-  /*background-repeat: no-repeat;*/
-  background: url(./sp_search.png) -4px -4px no-repeat;
+  background-image: url(./sp_main_4f8ccb.png);
+  background-position: -10px -165px;
+  background-size: 471px 442px;
+  background-repeat: no-repeat;
   vertical-align: middle;
   position: relative;
   top: -5px;
@@ -334,19 +338,14 @@ main {
   margin-bottom: 8px;
 }
 
-#main-second-block .inline-block:first-child {
-  margin-right: 8px;
-  float: left;
+#main-second-block .float-left:first-child {
   width: 740px;
-  vertical-align: top;
-  margin-bottom: 8px;
+  margin-right: 8px;
 }
 
-#main-second-block .inline-block:last-child {
+#main-second-block .float-left:last-child {
   width: 332px;
-  float: left;
   vertical-align: top;
-  margin-bottom: 8px;
 }
 
 #main-ytn {
@@ -371,7 +370,6 @@ main {
   height: 246px;
   background-color: white;
   margin-right: 8px;
-  margin-bottom: 8px;
   vertical-align: top;
 }
 
@@ -385,8 +383,6 @@ main {
   margin: 0;
   padding: 0;
   list-style: none;
-  vertical-align: top;
-  float: left;
 }
 
 #main-newsstand li {
@@ -418,12 +414,13 @@ main {
   width: 332px;
   height: 150px;
   background: #555;
+  vertical-align: top;
 }
 
 #main-category {
   float: left;
   width: 740px;
-  height: 837px;
+  height: 882px;
   background: white;
   margin-bottom: 8px;
   margin-right: 8px;
@@ -431,10 +428,15 @@ main {
 
 #main-shopping {
   float: left;
-  width: 332px;
-  height: 837px;
+  width: 330px;
+  height: 882px;
   background: white;
   margin-bottom: 8px;
+}
+
+#main-shopping iframe {
+  width: 100%;
+  height: 100%;
 }
 
 #main-third-block,
@@ -455,7 +457,7 @@ main {
 
 #main-third-ad {
   float: left;
-  width: 332px;
+  width: 330px;
   height: 130px;
   background: #555;
 }
