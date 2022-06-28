@@ -34,9 +34,21 @@ body {
   width: 1080px;
 }
 
+#header-top {
+  float: right;
+}
+
+#header-top {
+  color: #abc;
+  letter-spacing: -1px;
+  font-size: 11px;
+  line-height: 22px;
+}
+
 #header-search a {
   text-decoration: none;
   vertical-align: middle;
+  clear: both;
 }
 
 /* 자식 선택자*/
@@ -89,7 +101,7 @@ body {
   background: #03cf5d;
   position: absolute;
   right: -1px;
-  top: -1px;
+  top: -2px;
 }
 
 #search-image {
