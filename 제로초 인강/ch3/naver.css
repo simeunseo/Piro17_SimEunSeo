@@ -57,3 +57,20 @@
   padding: 0;
   outline: none;
 }
+
+#header-search fieldset button {
+  width: 49px;
+  height: 49px;
+  border: none;
+  padding: 0;
+  background: #03cf5d;
+}
+
+#search-image {
+  background-image: url(./sp_main_4f8ccb.png);
+  background-position: 41px 0px;
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+  background-size: 500px 500px;
+}
