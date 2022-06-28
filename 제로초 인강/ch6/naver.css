@@ -1,5 +1,5 @@
 * {
-  box-sizing: border-box; /*border, padding, content 다 합쳐서 width와 height이 계산됨*/
+  box-sizing: border-box;
 }
 
 html,
@@ -9,9 +9,22 @@ body {
   font-family: Dotum, "돋움", Helvetica, "Apple SD Gothic Neo", sans-serif;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
 #fixed {
   position: fixed;
-  top: 50px;
+  bottom: 50px;
   right: 50px;
   display: inline-block;
   width: 100px;
@@ -20,7 +33,8 @@ body {
   border-radius: 50px;
 }
 
-/*사용자에게는 안보이지만 screen reader에는 나타남*/
+/* Cascading Style Sheet */
+/* 선택자(selector) */
 .blind {
   position: absolute;
   overflow: hidden;
@@ -54,24 +68,24 @@ header {
   font-size: 11px;
   line-height: 22px;
 }
+
 #header-search {
   clear: both;
-  padding-top: 20px;
+  padding-top: 45px;
 }
 
 #header-search a {
   text-decoration: none;
 }
 
-/* 자식 선택자*/
 #header-search h1 {
-  width: 222px;
+  width: 198px;
   height: 48px;
   display: inline-block;
-  background-image: url(./sp_main_4f8ccb.png);
-  background-position: -10px -165px;
-  background-size: 471px 442px;
-  background-repeat: no-repeat;
+  /*background-image: url(./sp_search.png);*/
+  /*background-position: -4px -10px;*/
+  /*background-repeat: no-repeat;*/
+  background: url(./sp_search.png) -4px -4px no-repeat;
   vertical-align: middle;
   position: relative;
   top: -5px;
@@ -87,12 +101,16 @@ header {
 }
 
 #header-search fieldset {
-  margin-left: 20px;
+  margin-left: 18px;
+  /*padding-top: 12px;*/
+  /*padding-bottom: 12px;*/
+  /*padding-left: 10px;*/
+  /*padding-right: 0;*/
   padding: 12px 0 12px 10px;
   width: 521px;
   height: 49px;
   display: inline-block;
-  border: 2px solid #03cf5d;
+  border: 2px solid #03cf5d; /* hex */
   vertical-align: middle;
   position: relative;
 }
@@ -102,7 +120,7 @@ header {
   padding: 0;
   outline: none;
   vertical-align: top;
-  width: 393px;
+  width: 395px;
   height: 23px;
 }
 
@@ -113,7 +131,7 @@ header {
   padding: 0;
   background: #03cf5d;
   position: absolute;
-  right: -1px;
+  right: -2px;
   top: -2px;
 }
 
@@ -140,13 +158,13 @@ header {
 }
 
 #search-image {
-  background-image: url(./sp_main_4f8ccb.png);
-  background-position: 41px 0px;
-  width: 25px;
-  height: 25px;
+  background-image: url(./sp_search.png);
+  background-position: -3px -60px;
+  background-repeat: no-repeat;
+  width: 21px;
+  height: 21px;
   display: inline-block;
-  background-size: 500px 500px;
-  margin: 12px;
+  margin: 14px;
 }
 
 nav {
@@ -156,6 +174,7 @@ nav {
 }
 
 nav ul {
+  display: inline-block;
   margin: 0;
   padding: 16px 0 0 4px;
   list-style: none;
@@ -164,6 +183,7 @@ nav ul {
 nav li {
   display: inline-block;
 }
+
 nav li:first-child span:first-child {
   width: 25px;
   background-position: 0 -285px;
@@ -278,6 +298,11 @@ nav li.more:first-child span:first-child {
   font-size: 16px;
 }
 
+#rank-title {
+  letter-spacing: -1px;
+  font-size: 14px;
+}
+
 main {
   background-color: #f2f4f7;
   display: inline-block;
@@ -289,22 +314,27 @@ main {
   width: 1100px;
 }
 
-#main-ad {
+#main-first-block {
   display: inline-block;
+  width: 100%;
+}
+
+#main-ad {
+  float: left;
   width: 740px;
   height: 120px;
   background: #555;
   margin-right: 8px;
   margin-bottom: 8px;
-  float: left;
 }
 
 #main-login {
+  float: left;
   width: 332px;
   height: 120px;
+  vertical-align: top;
   background-color: white;
   margin-bottom: 8px;
-  float: left;
 }
 
 #main-second-block .inline-block:first-child {
@@ -325,6 +355,11 @@ main {
   margin-bottom: 8px;
 }
 
+#main-ytn h3,
+#main-ytn ol {
+  display: inline-block;
+}
+
 #main-newsstand {
   display: inline-block;
   width: 740px;
@@ -334,14 +369,28 @@ main {
   margin-bottom: 8px;
 }
 
+#main-newsstand h3 {
+  height: 45px;
+  border-bottom: 1px solid #ebeef3;
+}
+
+#main-newsstand ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
 #main-newsstand li {
+  float: left;
   width: 123px;
   height: 67px;
   border-right: 1px solid #f1f3f6;
   border-bottom: 1px solid #f1f3f6;
+  text-align: center;
 }
 
 #main-newsstand li img {
+  position: relative;
   top: 50%;
   transform: translateY(-50%);
 }
@@ -367,6 +416,8 @@ main {
   width: 740px;
   height: 837px;
   background: white;
+  margin-bottom: 8px;
+  margin-right: 8px;
 }
 
 #main-shopping {
@@ -374,4 +425,27 @@ main {
   width: 332px;
   height: 837px;
   background: white;
+  margin-bottom: 8px;
+}
+
+#main-third-block,
+#main-fourth-block {
+  display: inline-block;
+  width: 100%;
+}
+
+#main-event {
+  float: left;
+  width: 740px;
+  height: 130px;
+  background: white;
+  vertical-align: top;
+  margin-right: 8px;
+}
+
+#main-third-ad {
+  float: left;
+  width: 332px;
+  height: 130px;
+  background: #555;
 }
