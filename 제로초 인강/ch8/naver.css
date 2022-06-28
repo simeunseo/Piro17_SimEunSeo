@@ -570,10 +570,47 @@ main {
   list-style: none;
   margin: 0;
   padding: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  height: 45px;
+  width: 700px;
 }
 
 #subject-list li {
   float: left;
+  margin-right: 10px;
+  padding: 14px 7px 0;
+  ont-size: 14px;
+  font-family: NanumSquare, Dotum, "??", Helvetica, AppleSDGothicNeo,
+    sans-serif;
+}
+
+.opacity {
+  opacity: 0.8;
+  background: white;
+}
+
+.opacity.left {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 45px;
+  width: 15px;
+}
+
+.opacity.right {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 45px;
+  width: 15px;
+}
+
+#subject-list li.highlight {
+  border-bottom: 3px solid #00c73c;
+  color: #00b336;
+  font-weight: 700;
+  height: 45px;
 }
 
 #subject-all,
