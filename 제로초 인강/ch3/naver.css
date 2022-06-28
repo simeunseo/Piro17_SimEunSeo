@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box; /*border, padding, content 다 합쳐서 width와 height이 계산됨*/
+}
+
 /*사용자에게는 안보이지만 screen reader에는 나타남*/
 .blind {
   position: absolute;
@@ -15,6 +19,7 @@
 
 #header-search a {
   text-decoration: none;
+  vertical-align: middle;
 }
 
 /* 자식 선택자*/
@@ -44,9 +49,11 @@
   height: 49px;
   display: inline-block;
   border: 2px solid #03cf5d;
+  vertical-align: middle;
 }
 
-/* 자손 선택자
-#header-center h1 {
+#header-search fieldset input {
+  border: none;
+  padding: 0;
+  outline: none;
 }
-*/
