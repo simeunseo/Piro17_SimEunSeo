@@ -431,6 +431,16 @@ main {
   vertical-align: top;
 }
 
+#main-ytn h3,
+#main-newsstand h3 {
+  font-size: 14px;
+  font-family: NanumSquare, Dotum, "??", Helvetica, AppleSDGothicNeo,
+    sans-serif;
+  padding-top: 15px;
+  padding-left: 15px;
+  vertical-align: top;
+}
+
 #main-ytn {
   display: inline-block;
   width: 740px;
@@ -611,6 +621,10 @@ main {
   color: #00b336;
   font-weight: 700;
   height: 45px;
+}
+
+#subject-all {
+  border-right: 1px solid #ebeef3;
 }
 
 #subject-all,
