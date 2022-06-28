@@ -280,7 +280,90 @@ nav li.more:first-child span:first-child {
 
 main {
   background-color: #f2f4f7;
-  overflow: auto;
   display: inline-block;
   width: 100%;
+}
+
+#main-centered {
+  padding: 8px 10px;
+  width: 1100px;
+}
+
+#main-ad {
+  width: 740px;
+  height: 120px;
+  background: #555;
+}
+
+#main-login {
+  width: 332px;
+  height: 120px;
+  background-color: white;
+
+#main-second-block .inline-block:first-child {
+  width: 740px;
+}
+
+#main-second-block .inline-block:last-child {
+  width: 332px;
+  vertical-align: top;
+}
+
+#main-ytn {
+  display: inline-block;
+  width: 740px;
+  height: 46px;
+  background-color: white;
+}
+
+#main-ytn h3,
+#main-ytn ol {
+  display: inline-block;
+}
+
+#main-newsstand {
+  display: inline-block;
+  width: 740px;
+  height: 246px;
+  background-color: white;
+}
+
+#main-newsstand li {
+  width: 123px;
+  height: 67px;
+  border-right: 1px solid #f1f3f6;
+  border-bottom: 1px solid #f1f3f6;
+}
+
+#main-newsstand li img {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#main-weather {
+  display: inline-block;
+  width: 332px;
+  height: 142px;
+  background-color: white;
+}
+
+#main-second-ad {
+  display: inline-block;
+  width: 332px;
+  height: 150px;
+  background: #555;
+}
+
+#main-category {
+  float: left;
+  width: 740px;
+  height: 837px;
+  background: white;
+}
+
+#main-shopping {
+  float: left;
+  width: 332px;
+  height: 837px;
+  background: white;
 }
