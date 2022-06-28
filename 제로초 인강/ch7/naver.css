@@ -158,13 +158,13 @@ header {
 }
 
 #search-image {
-  background-image: url(./sp_search.png);
-  background-position: -3px -60px;
-  background-repeat: no-repeat;
-  width: 21px;
-  height: 21px;
+  background-image: url(./sp_main_4f8ccb.png);
+  background-position: 41px 0px;
+  width: 25px;
+  height: 25px;
   display: inline-block;
-  margin: 14px;
+  background-size: 500px 500px;
+  margin: 12px;
 }
 
 nav {
@@ -383,6 +383,17 @@ main {
   display: block;
 }
 
+#main-login .login-signup {
+  color: #888;
+  font-size: 12px;
+  line-height: 14px;
+  text-decoration: none;
+}
+
+#main-login .login-signup:hover {
+  text-decoration: underline;
+}
+
 #main-login .login-text {
   color: #888;
   font-size: 12px;
@@ -395,6 +406,13 @@ main {
   display: inline-block;
   width: 280px;
   height: 37px;
+}
+
+#main-login .login-signup {
+  float: right;
+  font-size: 12px;
+  line-height: 38px;
+  color: #666;
 }
 
 #main-second-block {
