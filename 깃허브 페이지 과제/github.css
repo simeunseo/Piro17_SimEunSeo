@@ -138,8 +138,9 @@ body {
     sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
 }
 
-body {
-  background-color: grey;
+body,
+section {
+  background-color: rgb(43, 49, 55);
 }
 
 h1,
@@ -168,8 +169,8 @@ h6 {
   position: absolute;
   top: 30px;
   width: 100%;
-  padding-right: 100px;
-  padding-left: 100px;
+  padding-right: 70px;
+  padding-left: 70px;
 }
 
 .container {
@@ -287,13 +288,13 @@ button {
 .contents p {
   font-size: 23px;
   font-weight: 400;
-  color: white;
+  color: rgb(173, 173, 173);
   line-height: 30px;
   letter-spacing: 0.2px;
 }
 
 .sign-up {
-  width: 462px;
+  width: 500px;
   height: 550px;
   display: inline-block;
   vertical-align: middle;
@@ -315,7 +316,7 @@ button {
   font-size: 16px;
   border: 1px solid rgb(182, 182, 182);
   border-radius: 5px;
-  width: 400px;
+  width: 440px;
   height: 40px;
 }
 
@@ -324,4 +325,23 @@ button {
 .form-password {
   padding: 20px 10px 0px 10px;
   display: inline-block;
+}
+
+.sign-up h3 {
+  font-size: 14px;
+  padding: 20px 30px;
+  text-align: left;
+  line-height: 20px;
+}
+
+.form-button {
+  height: 76px;
+  width: 440px;
+  margin-bottom: 10px;
+  background-color: rgb(46, 188, 79);
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
 }
