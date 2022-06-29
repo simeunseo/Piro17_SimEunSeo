@@ -20,7 +20,7 @@
             <h1 class="logo">github 로고</h1>
           </div>
           <ul class="menu-left-list">
-            <li class="menu-left-list-item"><a href="">Why Github?</a></li>
+            <li class="menu-left-list-item"><a href="">Why GitHub?</a></li>
             <li class="menu-left-list-item"><a href="">Team</a></li>
             <li class="menu-left-list-item"><a href="">Enterprise</a></li>
             <li class="menu-left-list-item"><a href="">Explore</a></li>
@@ -73,8 +73,10 @@
         <h1>Built for developers</h1>
         <p>
           GitHub is a development platform inspired by the way you work. From
-          open source to business, you can host and review code, manage
-          projects, and build software alongside 50 million developers.
+          <span style="color: white">open source</span> to
+          <span style="color: white">business</span>, you can host and review
+          code, manage projects, and build software alongside 50 million
+          developers.
         </p>
       </article>
     </section>
@@ -104,7 +106,14 @@
         <span style="color: rgb(70, 143, 224)">Learn more.</span>
       </h3>
       <div class="form-submit">
-        <button type="submit" class="form-button">Sign up for GitHub</button>
+        <button
+          type="submit"
+          class="form-button"
+          onclick="location.href='https://github.com/signup?user_email=&source=form-home-signup' "
+          style="cursor: pointer"
+        >
+          Sign up for GitHub
+        </button>
       </div>
       <h3>
         By clicking "Sign up for GitHub", you agree to our
@@ -113,5 +122,8 @@
         occasionally send you account related emails.
       </h3>
     </section>
+    <div class="picture" style="background-color: white">
+      <img src="./src/image.jpg" alt="고양이 우주인 그림" />
+    </div>
   </body>
 </html>
