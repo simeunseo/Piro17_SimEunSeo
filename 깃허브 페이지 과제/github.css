@@ -279,7 +279,7 @@ button {
 .contents {
   width: 53%;
   height: 700px;
-  padding: 188px 80px 0px 300px;
+  padding: 188px 80px 0px 290px;
   display: inline-block;
 }
 
@@ -363,10 +363,10 @@ button {
 }
 
 .picture img {
-  width: 45%;
-  margin-left: 850px;
+  width: 35%;
+  margin-left: 950px;
   position: absolute;
-  margin-top: -20px;
+  margin-top: -15px;
 }
 
 .menu-right button span:hover {
