@@ -11,6 +11,10 @@
       href="./src/pinned-octocat.svg"
     />
     <link rel="stylesheet" href="./github.css" />
+    <script
+      src="https://kit.fontawesome.com/f578b19b63.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <header class="header">
@@ -20,19 +24,48 @@
             <h1 class="logo">github 로고</h1>
           </div>
           <ul class="menu-left-list">
-            <li class="menu-left-list-item"><a href="">Why GitHub?</a></li>
+            <li class="menu-left-list-item">
+              <a href=""
+                >Why GitHub?
+                <i
+                  class="fa-solid fa-chevron-down"
+                  style="color: rgb(255, 255, 255, 0.5)"
+                ></i
+              ></a>
+            </li>
             <li class="menu-left-list-item"><a href="">Team</a></li>
             <li class="menu-left-list-item"><a href="">Enterprise</a></li>
-            <li class="menu-left-list-item"><a href="">Explore</a></li>
+            <li class="menu-left-list-item">
+              <a href=""
+                >Explore
+                <i
+                  class="fa-solid fa-chevron-down"
+                  style="color: rgb(255, 255, 255, 0.5)"
+                ></i
+              ></a>
+            </li>
             <li class="menu-left-list-item"><a href="">Marketplace</a></li>
-            <li class="menu-left-list-item"><a href="">Pricing</a></li>
+            <li class="menu-left-list-item">
+              <a href=""
+                >Pricing
+                <i
+                  class="fa-solid fa-chevron-down"
+                  style="color: rgb(255, 255, 255, 0.5)"
+                ></i
+              ></a>
+            </li>
           </ul>
         </nav>
         <div class="menu-right">
           <form action="https://github.com/search?">
             <fieldset>
               <div class="search-block">
-                <input type="text" placeholder="Search GitHub" />
+                <input
+                  type="text"
+                  placeholder="Search GitHub"
+                  onfocus="this.placeholder = ''"
+                  onblur="this.placeholder = 'Search GitHub'"
+                />
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="22"
@@ -122,8 +155,11 @@
         occasionally send you account related emails.
       </h3>
     </section>
-    <div class="picture" style="background-color: white">
-      <img src="./src/image.jpg" alt="고양이 우주인 그림" />
-    </div>
+    <section class="bottom-picture">
+      <div class="picture">
+        <img src="./src/image_transparent.png" alt="고양이 우주인 그림" />
+        <div class="white-background" style="background-color: white"></div>
+      </div>
+    </section>
   </body>
 </html>
