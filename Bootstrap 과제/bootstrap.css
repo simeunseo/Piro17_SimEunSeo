@@ -10,3 +10,15 @@ hr {
   opacity: 1;
   margin-bottom: 0.5rem;
 }
+
+@media (max-width: 992px) {
+  nav .container-fluid {
+    justify-content: center;
+  }
+  nav button {
+    order: -2;
+  }
+  nav .navbar-brand {
+    order: -1;
+  }
+}

@@ -6,18 +6,17 @@
     <!-- 부트스트랩 반응형을 위한 권고사항! 메타 뷰포트 꼭 써주기-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- 부트스트랩 CSS CDN -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
-      crossorigin="anonymous"
-    />
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
     <!-- 부트스트랩 아이콘 CDN -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css"
     />
     <link rel="stylesheet" href="bootstrap.css" />
+    
     <title>bootstrap</title>
   </head>
   <body class="d-flex flex-column h-100">
@@ -34,17 +33,16 @@
           aria-label="Toggle navigation"
         >
           <span class="navbar-toggler-icon"></span>
+          
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a
+        <a
                 class="nav-link active text-primary"
                 aria-current="page"
                 href="#"
                 >Eunseo Sim</a
               >
-            </li>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
               <a class="nav-link text-white" href="#">Intro</a>
             </li>
@@ -60,7 +58,7 @@
           </ul>
           <form class="d-flex" role="search">
             <button class="btn btn-outline-primary" type="submit">
-              Search
+              About
             </button>
           </form>
         </div>
