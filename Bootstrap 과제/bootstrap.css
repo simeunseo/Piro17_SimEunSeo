@@ -1,6 +1,7 @@
 .navbar,
 .highlights,
-.gallery {
+.gallery,
+footer {
   background-color: rgb(53, 53, 53);
 }
 
@@ -11,6 +12,15 @@
 hr {
   opacity: 1;
   margin-bottom: 0.5rem;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+li a {
+  text-decoration: none;
 }
 
 @media (max-width: 992px) {
@@ -43,9 +53,29 @@ hr {
   font-size: 7rem;
 }
 
-.btn:active {
+header .btn:active {
   box-shadow: none !important;
 }
+
+.intro .btn:active {
+  box-shadow: none !important;
+}
+
+.text-skyblue {
+  color: skyblue;
+}
+
+.btn-outline-skyblue {
+  color: skyblue;
+  border: 1px solid skyblue;
+}
+
+.btn-outline-skyblue:hover {
+  color: rgb(53, 53, 53);
+  background-color: skyblue;
+  border: 1px solid skyblue;
+}
+
 .intro a:active {
   background-color: rgb(209, 209, 209);
 }
