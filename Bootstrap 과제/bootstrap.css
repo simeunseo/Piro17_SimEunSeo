@@ -1,4 +1,6 @@
-.navbar {
+.navbar,
+.highlights,
+.gallery {
   background-color: rgb(53, 53, 53);
 }
 
@@ -32,8 +34,13 @@ hr {
   }
 }
 
-.navbar i {
+.navbar i,
+.highlights i {
   color: white;
+}
+
+.highlights i {
+  font-size: 7rem;
 }
 
 .btn:active {
@@ -41,4 +48,23 @@ hr {
 }
 .intro a:active {
   background-color: rgb(209, 209, 209);
+}
+
+.highlights .container {
+  min-height: 500px;
+}
+
+img-wrapper img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(50, 50);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin: auto;
+}
+
+.contact .col-12 input {
+  padding-bottom: 20rem;
 }
