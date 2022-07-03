@@ -1,3 +1,4 @@
+/*아래 영역들은 배경화면이 짙은 회색임*/
 .navbar,
 .highlights,
 .gallery,
@@ -6,24 +7,30 @@ footer,
   background-color: rgb(53, 53, 53);
 }
 
+/*컨테이너의 높이를 높게 지정함*/
 .container {
   min-height: 700px;
 }
 
+/*가로선의 스타일 지정*/
 hr {
   opacity: 1;
   margin-bottom: 0.5rem;
 }
 
+/*ul과 a의 불필요한 디자인 제거*/
 ul {
   list-style: none;
   padding-left: 0;
 }
-
 a {
   text-decoration: none;
 }
 
+/*화면을 좁혔을 때 nav 항목의 순서가
+Pirogramming -> Eunseo Sim -> About에서 
+navbar-toggler -> Pirogramming -> Eunseo Sim으로
+바뀌는 것을 구현 */
 @media (max-width: 992px) {
   nav .container-fluid {
     justify-content: center;
@@ -54,14 +61,15 @@ a {
   font-size: 7rem;
 }
 
+/*header와 intro에서는 버튼을 누를 때 그림자가 생기지 않음*/
 header .btn:active {
   box-shadow: none !important;
 }
-
 .intro .btn:active {
   box-shadow: none !important;
 }
 
+/*Eunseo Sim, About버튼, footer의 제목은 색상이 skyblue임*/
 .text-skyblue {
   color: skyblue;
 }
@@ -85,26 +93,12 @@ header .btn:active {
   min-height: 500px;
 }
 
-img-wrapper img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform: translate(50, 50);
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  margin: auto;
-}
-
 .contact .col-12 input {
   padding-bottom: 20rem;
 }
 
+/*navbar-toggler를 선택했을 때 주위에 생기는 그림자를 하얀색으로 변경*/
 .navbar-toggler:focus {
   box-shadow: 0 0 0 var(--bs-navbar-toggler-focus-width)
     rgba(255, 255, 255, 0.5);
-}
-
-.modal-title {
-  text-align: center !important;
 }
