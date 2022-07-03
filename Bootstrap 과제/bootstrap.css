@@ -1,0 +1,12 @@
+.navbar {
+  background-color: rgb(53, 53, 53);
+}
+
+.container {
+  min-height: 700px;
+}
+
+hr {
+  opacity: 1;
+  margin-bottom: 0.5rem;
+}
