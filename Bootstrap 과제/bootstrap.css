@@ -1,7 +1,8 @@
 .navbar,
 .highlights,
 .gallery,
-footer {
+footer,
+#modal-about .modal-content {
   background-color: rgb(53, 53, 53);
 }
 
@@ -19,7 +20,7 @@ ul {
   padding-left: 0;
 }
 
-li a {
+a {
   text-decoration: none;
 }
 
@@ -97,4 +98,13 @@ img-wrapper img {
 
 .contact .col-12 input {
   padding-bottom: 20rem;
+}
+
+.navbar-toggler:focus {
+  box-shadow: 0 0 0 var(--bs-navbar-toggler-focus-width)
+    rgba(255, 255, 255, 0.5);
+}
+
+.modal-title {
+  text-align: center !important;
 }

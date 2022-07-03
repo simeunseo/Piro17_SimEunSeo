@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <!-- ºÎÆ®½ºÆ®·¦ ¹İÀÀÇüÀ» À§ÇÑ ±Ç°í»çÇ×! ¸ŞÅ¸ ºäÆ÷Æ® ²À ½áÁÖ±â-->
+    <!-- ï¿½ï¿½Æ®ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½! ï¿½ï¿½Å¸ ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ ï¿½ï¿½ï¿½Ö±ï¿½-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- ºÎÆ®½ºÆ®·¦ CSS CDN -->
+    <!-- ï¿½ï¿½Æ®ï¿½ï¿½Æ®ï¿½ï¿½ CSS CDN -->
     <!-- CSS only -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
@@ -19,7 +19,7 @@
       integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
       crossorigin="anonymous"
     ></script>
-    <!-- ºÎÆ®½ºÆ®·¦ ¾ÆÀÌÄÜ CDN -->
+    <!-- ï¿½ï¿½Æ®ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ CDN -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css"
@@ -34,7 +34,7 @@
     <title>bootstrap</title>
   </head>
   <body class="d-flex flex-column h-100">
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg sticky-top">
       <div class="container-fluid">
         <a class="navbar-brand text-white" href="#">Pirogramming</a>
         <button
@@ -48,31 +48,31 @@
         >
           <i class="fa-solid fa-bars"></i>
         </button>
-        <a class="nav-link active text-skyblue" aria-current="page" href="#"
+        <a class="nav-link active text-skyblue" aria-current="page" href=""
           >Eunseo Sim</a
         >
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link text-white" href="#">Intro</a>
+              <a class="nav-link text-white" href="#intro">Intro</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-secondary" href="#">Highlights</a>
+              <a class="nav-link text-secondary" href="#highlights">Highlights</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-secondary" href="#">Gallery</a>
+              <a class="nav-link text-secondary" href="#gallery">Gallery</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-secondary" href="#">Contact</a>
+              <a class="nav-link text-secondary" href="#contact">Contact</a>
             </li>
           </ul>
           <form class="d-flex" role="search">
-            <button class="btn btn-outline-skyblue" type="submit">About</button>
+            <a href="#" class="btn btn-outline-skyblue" data-bs-toggle="modal" data-bs-target="#modal-about">About</a>
           </form>
         </div>
       </div>
     </nav>
-    <header class="bg-white">
+    <header class="header bg-white">
       <div class="container d-flex justify-content-center">
         <div class="row align-items-center justify-content-center w-100">
           <div class="col">
@@ -82,13 +82,13 @@
               <hr
                 style="border: 0px; height: 0.1rem; background-color: black"
               />
-              <a href="" class="btn btn-primary btn-sm">Get Started</a>
+              <a href="#intro" class="btn btn-primary btn-sm">Get Started</a>
             </div>
           </div>
         </div>
       </div>
     </header>
-    <section class="intro bg-secondary">
+    <section class="intro bg-secondary" id="intro">
       <div class="container d-flex justify-content-center">
         <div class="row align-items-center justify-content-center">
           <div class="col">
@@ -100,17 +100,17 @@
                 sizes enables you<br />create responsive layouts that behave
                 accordingly on different sizes.
               </p>
-              <a href="" class="btn btn-light btn-sm mt-3">Learn more</a>
+              <a href="#highlights" class="btn btn-light btn-sm mt-3">Learn more</a>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <section class="highlights">
+    <section class="highlights" id="highlights">
       <div class="container d-flex justify-content-center">
         <div class="row align-items-center justify-content-center">
           <div class="col text">
-            <h1 class="text-primary text-center pt-3 pb-3">Flexible Layouts</h1>
+            <h1 class="text-primary text-center pt-5 pb-3">Flexible Layouts</h1>
             <hr
               style="
                 border: 0px;
@@ -140,7 +140,7 @@
         </div>
       </div>
     </section>
-    <section class="gallery">
+    <section class="gallery" id="gallery">
       <div class="container text-center">
         <div class="row mt-12 mb-5">
           <div class="col-lg-4 col-md-6 mt-5 mb-2">
@@ -175,7 +175,7 @@
           </div>
       </div>
     </section>
-    <section class="contact bg-secondary">
+    <section class="contact bg-secondary" id="contact">
         <div class="container text-center">
             <div class="col text">
                 <h1 class="text-primary text-center fw-semibold pt-5 pb-3">Get in Touch</h1>
@@ -202,10 +202,10 @@
                     <input type="text" class="form-control mt-4 mb-5" id="FormControlMessage" placeholder="Your message here...">
                 </div>
             </div>
-            <button type="button" class="btn btn-lg btn-primary w-25 mb-5">Send</button>
+            <a href="#" class="btn btn-lg btn-primary w-25 mb-5" data-bs-toggle="modal" data-bs-target="#modal-send">Send</a>
         </div>
     </section>
-    <footer>
+    <footer id="footer">
         <div class="continer text-start mt-3">
             <div class="row text-start align-items-center ms-5 me-5">
                 <div class="col-lg-4 col-md-6">
@@ -245,11 +245,46 @@
                 <div class="col-lg-4 col-md-12">
                     <h5 class="text-skyblue">Stay Posted</h5>
                     <input type="email" class="form-control mb-2" id="FormControlEmail" placeholder="Tell us your email">
-                    <button type="button" class="btn btn-primary mb-5">Subscribe for updates</button>
+                    <a href="#" class="btn btn-primary mb-5" data-bs-toggle="modal" data-bs-target="#modal-send">Subscribe for updates</a>
                 </div>
                 <div class="copyright text-start mt-5 mb-5 text-secondary">Bootstrap &copy; 2022 Pirogramming17</div>
             </div>
         </div>
     </footer>
+    <!--modal-about-->
+    <div class="modal fade modal-md" id="modal-about" tabindex="-1">
+        <div class="modal-dialog">
+        <div class="modal-content text-center text-white">
+            <div class="modal-header justify-content-center">
+            <h5 class="modal-title">í”¼ë¡œê·¸ë˜ë° 17ê¸°</h5>
+            </div>
+            <div class="modal-body">
+                <h4>íŒŒì´íŒ…!</h4>
+                <p>ëª¨ë‘ë“¤ ì•„ë¥´ìƒ¤ í•˜ì‹œëŠë¼ ìˆ˜ê³  ë§ìœ¼ì…¨ìŠµë‹ˆë‹¤!!<br>í˜ë“¤ë”ë¼ë„ ëë‚˜ë©´ ë‚¨ëŠ”ê²Œ ë§ì„ ê²ë‹ˆë‹¤<br>ë‚¨ì€ ì„¸ì…˜ë“¤ë„ í˜ë‚´ì„œ ì—´ì‹¬íˆ í•´ë´ìš”!</p>
+            </div>
+            <div class="modal-footer">
+                <a href="" class="text-primary" data-bs-dismiss="modal">Download</a>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" aria-label="Close">OK</button>
+            </div>
+        </div>
+        </div>
+    </div>
+        <!--modal-send-->
+        <div class="modal fade modal-md" id="modal-send" tabindex="-1">
+            <div class="modal-dialog">
+            <div class="modal-content text-center">
+                <div class="modal-header justify-content-center">
+                    <h5 class="modal-title fw-bold">Nice-Job!</h5>
+                </div>
+                <div class="modal-body">
+                    <p>You clicked the button, but it doesn't<br>actually go anywhere.<br></p>
+                    <p class="text-primary">Learn more at Bootstrap</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary w-100" data-bs-dismiss="modal" aria-label="Close">OK</button>
+                </div>
+            </div>
+            </div>
+        </div>
   </body>
 </html>
