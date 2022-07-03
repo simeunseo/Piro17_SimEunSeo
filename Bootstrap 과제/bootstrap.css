@@ -22,3 +22,23 @@ hr {
     order: -1;
   }
 }
+
+@media (min-width: 993px) {
+  nav .nav-link {
+    padding-left: 1.5rem;
+  }
+  .navbar-nav:first-child {
+    padding-left: 1.5rem;
+  }
+}
+
+.navbar i {
+  color: white;
+}
+
+.btn:active {
+  box-shadow: none !important;
+}
+.intro a:active {
+  background-color: rgb(209, 209, 209);
+}
