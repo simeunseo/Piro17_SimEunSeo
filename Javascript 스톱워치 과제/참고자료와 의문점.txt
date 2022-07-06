@@ -16,4 +16,5 @@ https://velog.io/@jayounglee92/querySelectorAll-Elements%EC%97%90-%ED%81%B4%EB%A
 https://hianna.tistory.com/433
 이 블로그의 코드에서는 js파일에 function을 호출하지 않고 그저 늘어놓기만 했는데 잘 실행이 된다.
 function은 언제 호출하는 것인가?
-나의 경우 function을 만들고 그 밑에 호출을 해보았지만 실행이 되지 않았다. 
+나의 경우 function만 만들어놓으면 그 내용이 실행되지 않고 그 밑에 호출을 해보아도 실행이 되지 않았다.
+대체뭘까??????ㅠㅠㅠㅠ 너무답답하다
