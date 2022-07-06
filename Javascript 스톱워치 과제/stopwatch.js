@@ -11,7 +11,6 @@ let newRecord;
 const selectAllBtn = document.querySelector(".check-all"); //전체 선택 버튼
 let btnList = document.querySelectorAll(".check"); //모든 기록들의 체크 버튼 리스트
 const trashBtn = document.querySelector(".trash");
-let allCheckedFlag = 0;
 
 //타이머 start버튼 기능
 startBtn.addEventListener("click", function () {
@@ -67,24 +66,16 @@ selectAllBtn.addEventListener("click", function () {
     for (let j = 0; j < btnList.length; j++) {
       btnList[j].checked = true;
     }
-    allCheckedFlag = 1;
   } else {
     //이미 체크되어있다면 모두 해제한다
     selectAllBtn.checked = false;
     for (let j = 0; j < btnList.length; j++) {
       btnList[j].checked = false;
     }
-    allCheckedFlag = 0;
   }
 });
 
-for (let i = 0; i < btnList.length; i++) {
-  if (btnList[i].checked == false) {
-    allCheckedFlag = 0;
-    selectAllBtn.checked = false;
-  }
-}
-
+//기록 삭제 버튼 기능
 trashBtn.addEventListener("click", function () {
   for (let k = 0; k < btnList.length; k++) {
     //체크된 기록이라면
@@ -92,4 +83,5 @@ trashBtn.addEventListener("click", function () {
       btnList[k].parentElement.parentElement.remove();
     }
   }
+  selectAllBtn.checked = false;
 });
