@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Stropwatch</title>
+    <link rel="stylesheet" href="stopwatch.css" />
+  </head>
+  <body>
+    <main>
+      <div class="clock-section">
+        <div class="clock">
+          <div class="time">
+            <div class="second">00</div>
+            <div class="colon">:</div>
+            <div class="millisecond">00</div>
+          </div>
+          <ul class="btns">
+            <li>
+              <button class="start-btn">
+                <i class="fa-solid fa-play"></i>
+              </button>
+            </li>
+            <li>
+              <button class="stop-btn">
+                <i class="fa-solid fa-pause"></i>
+              </button>
+            </li>
+            <li>
+              <button class="reset-btn">
+                <i class="fa-solid fa-stop"></i>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="record-section">
+        <div class="menu">
+          <ul>
+            <li>
+              <button class="select-all">
+                <input type="checkbox" class="check" />
+              </button>
+            </li>
+            <li>
+              <button class="trash">
+                <i class="fa-solid fa-trash"></i>
+              </button>
+            </li>
+          </ul>
+        </div>
+        <hr />
+        <div class="record">
+          <ul></ul>
+        </div>
+      </div>
+    </main>
+
+    <script
+      src="https://kit.fontawesome.com/f578b19b63.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="stopwatch.js"></script>
+  </body>
+</html>

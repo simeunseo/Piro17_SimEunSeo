@@ -1,0 +1,154 @@
+@import "./reset.css";
+@font-face {
+  font-family: "LeferiPoint-WhiteA";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/LeferiPoint-WhiteA.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  background-color: rgb(156, 186, 163);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+main {
+  display: flex;
+  justify-content: space-between;
+}
+
+.clock-section {
+  background-color: white;
+  border-radius: 50%;
+  width: 22rem;
+  height: 22rem;
+  box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.03);
+  padding-right: 2rem;
+  padding-left: 2rem;
+  padding-top: 2.5rem;
+  padding-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 15rem;
+}
+
+.clock {
+  font-family: "LeferiPoint-WhiteA";
+  font-size: 3rem;
+  color: rgb(80, 80, 80);
+  text-align: center;
+}
+
+.time {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+  margin-top: 1.5rem;
+  letter-spacing: 0.2rem;
+}
+
+.time div {
+  display: inline-block;
+}
+
+.clock-section .second,
+.clock-section .millisecond {
+  width: 5rem;
+}
+
+.clock-section .btns {
+  display: flex;
+  justify-content: center;
+}
+
+.clock-section .btns button {
+  font-size: 1.5rem;
+  color: rgb(80, 80, 80);
+  padding: 1rem;
+}
+
+.reset-btn {
+  font-size: 1.6rem;
+}
+
+.record-section hr {
+  border: 0px;
+  height: 0.2rem;
+  width: 22rem;
+  background-color: white;
+  box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.03);
+  margin-bottom: 1.5rem;
+  margin-top: 0.8rem;
+}
+
+.record-section .menu .trash {
+  font-size: 1.5rem;
+  color: white;
+  box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.03);
+}
+
+.record-section .menu ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: self-end;
+}
+
+.record-time {
+  font-family: "LeferiPoint-WhiteA";
+  font-size: 1.5rem;
+  color: white;
+  padding-left: 7rem;
+  padding-top: 0.5rem;
+  display: flex;
+  text-align: right;
+}
+
+.record-section li {
+  margin-top: 1rem;
+  display: flex;
+  align-items: baseline;
+}
+
+.record-section .second,
+.record-section .millisecond {
+  padding: 0 0.5rem;
+  width: 3rem;
+}
+
+.record-section .select-all,
+.record-section .select {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.record i {
+  font-size: 1.5rem;
+  color: white;
+}
+
+.select-all .fa-circle-check,
+.select .fa-circle-check {
+  display: none;
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  background: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 1.5rem;
+  width: 1.5rem;
+  outline: 0;
+  box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.03);
+}
+
+input[type="checkbox"]:checked {
+  background: rgb(80, 80, 80);
+  box-shadow: 0 0 0 5px white inset;
+}
