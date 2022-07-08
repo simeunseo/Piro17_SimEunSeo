@@ -16,23 +16,37 @@ def checkInput(num):
     
 num=0
 currentNum = 1
+gameEndFlag = 0
+winner = 'none'
 
-while True :
-    num=input('부를 숫자의 개수를 입력하세요(1, 2, 3만 입력 가능) :')
-    if checkInput(num)==0: #입력값이 올바르다면
-        num=int(num)
-        break
+while gameEndFlag == 0:
+    #A입력 받기
+    while True :
+        num=input('부를 숫자의 개수를 입력하세요(1, 2, 3만 입력 가능) :')
+        if checkInput(num)==0: #입력값이 올바르다면
+            num=int(num)
+            break
+    #A숫자 부르기
+    for i in range(currentNum, currentNum+num):
+        print('playerA : %d' %i)
+        currentNum+=1
+        if i == 31 : #31을 부르면
+            gameEndFlag = 1 #게임 종료
+            winner = 'B'
+            break
 
-for i in range(currentNum, num+1):
-    print('playerA : %d' %i)
-currentNum += num
-
-while True :
-    num=input('부를 숫자의 개수를 입력하세요(1, 2, 3만 입력 가능) :')
-    if checkInput(num)==0: #입력값이 올바르다면
-        num=int(num)
-        break
-
-for i in range(currentNum, currentNum+num):
-    print('playerB : %d' %i)
-currentNum += num
+    if gameEndFlag == 0 :
+        #B입력 받기
+        while True :
+            num=input('부를 숫자의 개수를 입력하세요(1, 2, 3만 입력 가능) :')
+            if checkInput(num)==0: #입력값이 올바르다면
+                num=int(num)
+                break
+        #B숫자 부르기
+        for i in range(currentNum, currentNum+num):
+            print('playerB : %d' %i)
+            currentNum+=1
+            if i == 31 : #31을 부르면
+                gameEndFlag = 1 #게임 종료
+                winner = 'A'
+                break
