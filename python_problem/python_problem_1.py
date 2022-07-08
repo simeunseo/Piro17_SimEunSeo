@@ -39,6 +39,7 @@ def brGame(player):
                 winner = 'B'
             else :
                 winner = 'A'
+            return
                 
 
 
