@@ -14,10 +14,12 @@ def checkInput(num):
         print('정수를 입력하세요')
         return 1
     
-
 num=0
 while True :
     num=input('부를 숫자의 개수를 입력하세요(1, 2, 3만 입력 가능) :')
-    if checkInput(num)==0:
+    if checkInput(num)==0: #입력값이 올바르다면
+        num=int(num)
         break
-            
+
+for i in range(1,num+1):
+    print('playerA : %d' %i)
