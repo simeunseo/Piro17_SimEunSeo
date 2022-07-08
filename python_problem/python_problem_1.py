@@ -50,3 +50,5 @@ while gameEndFlag == 0:
                 gameEndFlag = 1 #게임 종료
                 winner = 'A'
                 break
+
+print('player%s win!' %winner)
