@@ -27,14 +27,22 @@ def Menu3(studentInfo) :
     print('---------------------------')
     for key in studentInfo:
         print('{:<7}{:>5}{:>7}{:>7}'.format(key, studentInfo[key][0], studentInfo[key][1], studentInfo[key][2]))
-'''
+
 ##############  menu 4
-def Menu4(#매개변수가 필요한지 판단 후 코딩할 것):
+def Menu4(studentInfo, studentName) :
     #학생 정보 삭제하는 코딩
-'''
+    del studentInfo[studentName]
+
+##############  grading안된 학생이 있는지 확인하는 함수
+def gradingCheck(studentInfo) :
+    for key in studentInfo :
+            if len(studentInfo[key]) != 3 :
+                #grading이 안된 학생이 있음
+                return 1
+
 
 #학생 정보를 저장할 변수 초기화
-studentInfo = {'David':[10, 20]}
+studentInfo = {}
 
 
 print("*Menu*******************************")
@@ -75,31 +83,39 @@ while True :
            print('No Student data!')
         else :
             Menu2(studentInfo)
-            print('Grading to all students')
+            print('Grading to all students.')
 
     elif choice == "3" :
         #예외사항 처리(저장된 학생 정보의 유무, 저장되어 있는 학생들의 학점이 모두 부여되어 있는지)
         #예외사항이 아닌 경우 3번 함수 호출
+        gradingFlag = 1
         if not studentInfo : 
            #사전이 비어있다면
            print('No Student data!')
         else :
-            for key in studentInfo :
-                if len(studentInfo[key]) == 3 :
-                    #grading이 모두 완료됨
-                    Menu3(studentInfo)
-                else :
-                    #grading이 안된 학생이 있음
-                    print("There is a student who didn't get grade.")
-                    break
+            if gradingCheck(studentInfo) :
+                print("There is a student who didn't get grade.")
+            else :
+                Menu3(studentInfo)               
         
         
     elif choice == "4" :
-        pass
         #예외사항 처리(저장된 학생 정보의 유무)
         #예외사항이 아닌 경우, 삭제할 학생 이름 입력 받기
         #입력 받은 학생의 존재 유무 체크 후, 없으면 "Not exist name!" 출력
         #있으면(예를 들어 kim 이라 하면), 4번 함수 호출 후에 "kim student information is deleted." 출력
+        if not studentInfo : 
+           #사전이 비어있다면
+           print('No Student data!')
+        else :
+            studentName = input('Enter the name to delete : ')
+            if not studentName in studentInfo :
+                #학생이 존재하지 않으면
+                print('Not exist name!')
+            else :
+                #학생이 존재하면
+                Menu4(studentInfo, studentName)
+                print('kim student information is deleted.')
 
     elif choice == "5" :
         pass
