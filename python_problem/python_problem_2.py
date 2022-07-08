@@ -1,8 +1,7 @@
 ##############  menu 1
 def Menu1(studentInfo, userInput) :
     #사전에 학생 정보 저장하는 코딩
-    studentInfo[userInput[0]] = [int(userInput[1]),int(userInput[2])]
-    
+    studentInfo[userInput[0]] = [int(userInput[1]),int(userInput[2])]   
 
 ##############  menu 2
 def Menu2(studentInfo) :
@@ -20,8 +19,6 @@ def Menu2(studentInfo) :
             else :
                 studentInfo[key].append('D')
         
-        
-
 ##############  menu 3
 def Menu3(studentInfo) :
     #출력 코딩
@@ -44,10 +41,8 @@ def gradingCheck(studentInfo) :
                 #grading이 안된 학생이 있음
                 return 1
 
-
 #학생 정보를 저장할 변수 초기화
 studentInfo = {}
-
 
 print("*Menu*******************************")
 print("1. Inserting students Info(name score1 score2)")
@@ -101,7 +96,6 @@ while True :
                 print("There is a student who didn't get grade.")
             else :
                 Menu3(studentInfo)               
-        
         
     elif choice == "4" :
         #예외사항 처리(저장된 학생 정보의 유무)
