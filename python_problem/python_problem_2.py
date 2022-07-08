@@ -1,13 +1,25 @@
 ##############  menu 1
 def Menu1(studentInfo, userInput) :
     #사전에 학생 정보 저장하는 코딩
-    studentInfo[userInput[0]] = [userInput[1],userInput[2]]
+    studentInfo[userInput[0]] = [int(userInput[1]),int(userInput[2])]
     
-'''
-##############  menu 2
-def Menu2(#매개변수가 필요한지 판단 후 코딩할 것) :
-    #학점 부여 하는 코딩
 
+##############  menu 2
+def Menu2(studentInfo) :
+    #학점 부여 하는 코딩
+    for key in studentInfo :
+        avg = (studentInfo[key][0]+studentInfo[key][1])/2
+        if avg >= 90 :
+            studentInfo[key].append('A')
+        elif avg >= 80 :
+            studentInfo[key].append('B')
+        elif avg >= 70 :
+            studentInfo[key].append('C')
+        else :
+            studentInfo[key].append('D')
+        
+
+'''
 ##############  menu 3
 def Menu3(#매개변수가 필요한지 판단 후 코딩할 것) :
     #출력 코딩
@@ -49,13 +61,17 @@ while True :
             print('Score is not positive integer!')
         else :
             Menu1(studentInfo, userInput)
-            print(studentInfo)
-'''
+
     elif choice == "2" :
         #예외사항 처리(저장된 학생 정보의 유무)
         #예외사항이 아닌 경우 2번 함수 호출
         #"Grading to all students." 출력
-
+        if not studentInfo : 
+           #사전이 비어있다면
+           print('No Student data!')
+        else :
+            Menu2(studentInfo)
+'''
     elif choice == "3" :
         #예외사항 처리(저장된 학생 정보의 유무, 저장되어 있는 학생들의 학점이 모두 부여되어 있는지)
         #예외사항이 아닌 경우 3번 함수 호출
@@ -69,7 +85,7 @@ while True :
     elif choice == "5" :
         #프로그램 종료 메세지 출력
         #반복문 종료
-
+'''
     else :
         #"Wrong number. Choose again." 출력
-'''
+
