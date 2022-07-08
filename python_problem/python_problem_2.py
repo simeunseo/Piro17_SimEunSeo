@@ -8,20 +8,24 @@ def Menu1(studentInfo, userInput) :
 def Menu2(studentInfo) :
     #학점 부여 하는 코딩
     for key in studentInfo :
-        avg = (studentInfo[key][0]+studentInfo[key][1])/2
-        if avg >= 90 :
-            studentInfo[key].append('A')
-        elif avg >= 80 :
-            studentInfo[key].append('B')
-        elif avg >= 70 :
-            studentInfo[key].append('C')
-        else :
-            studentInfo[key].append('D')
+        if len(studentInfo[key]) != 3 :
+            #아직 grading되지 않았다면
+            avg = (studentInfo[key][0]+studentInfo[key][1])/2
+            if avg >= 90 :
+                studentInfo[key].append('A')
+            elif avg >= 80 :
+                studentInfo[key].append('B')
+            elif avg >= 70 :
+                studentInfo[key].append('C')
+            else :
+                studentInfo[key].append('D')
+        
         
 
 ##############  menu 3
 def Menu3(studentInfo) :
     #출력 코딩
+    print()
     print('---------------------------')
     print('{:<7}{:>5}{:>7}{:>7}'.format('name','mid','final','grade'))
     print('---------------------------')
@@ -115,12 +119,13 @@ while True :
             else :
                 #학생이 존재하면
                 Menu4(studentInfo, studentName)
-                print('kim student information is deleted.')
+                print('%s student information is deleted.'%studentName)
 
     elif choice == "5" :
-        pass
         #프로그램 종료 메세지 출력
         #반복문 종료
+        print('Exit Program!')
+        break
 
     else :
         #"Wrong number. Choose again." 출력
