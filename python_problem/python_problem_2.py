@@ -19,11 +19,15 @@ def Menu2(studentInfo) :
             studentInfo[key].append('D')
         
 
-'''
 ##############  menu 3
-def Menu3(#매개변수가 필요한지 판단 후 코딩할 것) :
+def Menu3(studentInfo) :
     #출력 코딩
-
+    print('---------------------------')
+    print('{:<7}{:>5}{:>7}{:>7}'.format('name','mid','final','grade'))
+    print('---------------------------')
+    for key in studentInfo:
+        print('{:<7}{:>5}{:>7}{:>7}'.format(key, studentInfo[key][0], studentInfo[key][1], studentInfo[key][2]))
+'''
 ##############  menu 4
 def Menu4(#매개변수가 필요한지 판단 후 코딩할 것):
     #학생 정보 삭제하는 코딩
@@ -71,21 +75,38 @@ while True :
            print('No Student data!')
         else :
             Menu2(studentInfo)
-'''
+            print('Grading to all students')
+
     elif choice == "3" :
         #예외사항 처리(저장된 학생 정보의 유무, 저장되어 있는 학생들의 학점이 모두 부여되어 있는지)
         #예외사항이 아닌 경우 3번 함수 호출
-
+        if not studentInfo : 
+           #사전이 비어있다면
+           print('No Student data!')
+        else :
+            for key in studentInfo :
+                if len(studentInfo[key]) == 3 :
+                    #grading이 모두 완료됨
+                    Menu3(studentInfo)
+                else :
+                    #grading이 안된 학생이 있음
+                    print("There is a student who didn't get grade.")
+                    break
+        
+        
     elif choice == "4" :
+        pass
         #예외사항 처리(저장된 학생 정보의 유무)
         #예외사항이 아닌 경우, 삭제할 학생 이름 입력 받기
         #입력 받은 학생의 존재 유무 체크 후, 없으면 "Not exist name!" 출력
         #있으면(예를 들어 kim 이라 하면), 4번 함수 호출 후에 "kim student information is deleted." 출력
 
     elif choice == "5" :
+        pass
         #프로그램 종료 메세지 출력
         #반복문 종료
-'''
+
     else :
         #"Wrong number. Choose again." 출력
+        print('Wrong number. Choose again.')
 
