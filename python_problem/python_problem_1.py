@@ -1,3 +1,5 @@
+from random import randint
+
 def checkInput(num):
     if num.isdigit(): #입력값이 숫자라면
         #정수인지 확인한다
@@ -23,22 +25,25 @@ def brGame(player):
     winner = 'none'
     num=0
 
-    #입력 받기
-    while True :
-        num=input('부를 숫자의 개수를 입력하세요(1, 2, 3만 입력 가능) :')
-        if checkInput(num)==0: #입력값이 올바르다면
-            num=int(num)
-            break
+    if player == 'computer':
+        num = randint(1,3)
+    else :
+        #입력 받기
+        while True :
+            num=input('부를 숫자의 개수를 입력하세요(1, 2, 3만 입력 가능) :')
+            if checkInput(num)==0: #입력값이 올바르다면
+                num=int(num)
+                break
     #숫자 부르기
     for i in range(currentNum, currentNum+num):
-        print('player%s : %d' %(player, i))
+        print('%s %d' %(player, i))
         currentNum+=1
         if i == 31 : #31을 부르면
             gameEndFlag = 1 #게임 종료
-            if player== 'A' :
-                winner = 'B'
+            if player== 'player' :
+                winner = 'computer'
             else :
-                winner = 'A'
+                winner = 'player'
             return
                 
 
@@ -47,12 +52,12 @@ gameEndFlag = 0
 currentNum = 1
 while True:
     if gameEndFlag == 0 : 
-        brGame('A')
+        brGame('computer')
     else :
         break
     if gameEndFlag == 0 :
-        brGame('B')
+        brGame('player')
     else :
         break
 
-print('player%s win!' %winner)
+print('%s win!' %winner)
