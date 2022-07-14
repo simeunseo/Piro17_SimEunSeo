@@ -13,8 +13,8 @@ def review_list(request):
         reviews = Review.objects.all().order_by('-title')
     elif order == order_list[3]:
         reviews = Review.objects.all().order_by('-star')
-    else :
-        reviews = Review.objects.all()
+    else : #기본 정렬을 작성시간순으로 한다
+        reviews = Review.objects.all().order_by('-created_date')
         
     context = {
         "reviews": reviews,
