@@ -8,6 +8,8 @@ def review_list(request):
     return render(request, template_name='reviews/review_list.html', context=context) 
 
 def review_create(request):
+    genres = Review.GENRE_CHOICES
+    
     if request.method == 'POST':
         # post 요청 값 받기 
         title = request.POST["title"]
@@ -23,5 +25,5 @@ def review_create(request):
         Review.objects.create(title=title, year=year, genre=genre, star=star, runtime=runtime, review=review, director=director, actor=actor)
         return redirect("/review")
         
-    context = {}
+    context = {"genres": genres}
     return render(request, template_name ="reviews/review_create.html", context=context)

@@ -15,10 +15,9 @@
       <input type="text" name="year" />
       <span>장르 : </span>
       <select name="genre" autofocus>
-        <option>Lorem</option>
-        <option>Ipsum</option>
-        <option>Dolor</option>
-        <option>Amet</option>
+        {% for genre in genres %}
+        <option>{{genre.1}}</option>
+        {% endfor %}
       </select>
       <span>별점 : </span>
       <input type="text" name="star" />
