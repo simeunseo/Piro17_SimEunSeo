@@ -5,7 +5,7 @@ from django.utils import timezone
 class Review(models.Model):
     #영화제목, 개봉년도, 장르, 별점, 러닝타임, 리뷰, 감독, 배우
     title = models.CharField(max_length=50, verbose_name="제목")
-    release_year = models.CharField(max_length=4, verbose_name="개봉년도")
+    year = models.CharField(max_length=4, verbose_name="개봉년도")
     GENRE_CHOICES = (
         ('ACTION','액션'),
         ('CRIME','범죄'),

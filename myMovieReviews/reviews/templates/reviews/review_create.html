@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Movie reviews</title>
+  </head>
+  <body>
+    <form action="/create" method="post">
+      {% csrf_token %}
+      <span>제목 : </span>
+      <input type="text" name="title" />
+      <span>개봉년도 : </span>
+      <input type="text" name="year" />
+      <span>장르 : </span>
+      <select name="genre" autofocus>
+        <option>Lorem</option>
+        <option>Ipsum</option>
+        <option>Dolor</option>
+        <option>Amet</option>
+      </select>
+      <span>별점 : </span>
+      <input type="text" name="star" />
+      <span>러닝타임 : </span>
+      <input type="text" name="runtime" />
+      <span>리뷰 : </span>
+      <textarea name="review" id="" cols="30" rows="10"></textarea>
+      <span>감독 : </span>
+      <input type="text" name="director" />
+      <span>배우 : </span>
+      <input type="text" name="actor" />
+      <div>
+        <input type="submit" value="제출" />
+      </div>
+    </form>
+  </body>
+</html>
