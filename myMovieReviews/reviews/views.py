@@ -27,3 +27,10 @@ def review_create(request):
         
     context = {"genres": genres}
     return render(request, template_name ="reviews/review_create.html", context=context)
+
+def review_detail(request, id):
+    review = Review.objects.get(id=id)
+    context = {
+        "review" : review
+    }
+    return render(request, template_name="reviews/review_detail.html", context=context)

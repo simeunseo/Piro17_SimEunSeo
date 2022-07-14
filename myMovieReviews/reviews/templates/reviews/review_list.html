@@ -9,7 +9,7 @@
   <body>
     {% for review in reviews %}
     <article>
-      <h1>{{review.title}}</h1>
+      <h1><a href="/review/{{review.id}}">{{review.title}}</a></h1>
       <p>{{review.year}}</p>
       <p>{{review.get_genre_display}}</p>
       <p>{{review.star}} 점</p>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Movie reviews</title>
+</head>
+<body>
+    <article>
+        <h2>
+            {{ review.title }}
+        </h2>
+        <p>
+            개봉년도: {{ review.year }}
+            감독: {{ review.director }}
+            주연: {{ review.actor }}
+            장르 : {{ review.genre }}
+            별점 : {{ review.star }}
+            러닝타임 : {{ review.runtime }}
+        </p>
+			{{ review.review }}
+        </p>
+    </article>
+
+    <div>
+        <a href="/review/{{review.id}}/update/">수정</a>
+    </div>
+</body>
+</html>
