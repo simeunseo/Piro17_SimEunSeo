@@ -7,4 +7,5 @@ urlpatterns = [
     path('create', views.review_create, name='review_create'),
     path('review/<int:id>', views.review_detail, name="review_detail"),
     path('review/<int:id>/update', views.review_update, name="review_update"),
+    path('delete/<int:id>', views.review_delete, name="review_delete")
 ]

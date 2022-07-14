@@ -25,6 +25,10 @@
 
     <div>
         <a href="/review/{{review.id}}/update">수정</a>
+        <form action="/delete/{{review.id}}" method="post">
+            {% csrf_token%}
+            <button>delete</button>
+        </form>
     </div>
 </body>
 </html>

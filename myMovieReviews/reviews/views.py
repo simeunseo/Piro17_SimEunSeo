@@ -57,3 +57,9 @@ def review_update(request, id):
             "genres" : genres
         }
         return render(request, template_name="reviews/review_update.html", context=context)
+    
+def review_delete(request, id):
+    if request.method == "POST":
+        review = Review.objects.get(id=id)
+        review.delete()
+    return redirect("/review")
