@@ -30,8 +30,10 @@ def review_create(request):
 
 def review_detail(request, id):
     review = Review.objects.get(id=id)
+    runtime = f'{review.runtime//60}시간 {review.runtime%60}분'
     context = {
-        "review" : review
+        "review" : review,
+        "runtime" : runtime
     }
     return render(request, template_name="reviews/review_detail.html", context=context)
 

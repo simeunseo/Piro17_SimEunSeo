@@ -20,12 +20,11 @@
             주연: {{ review.actor }}
             장르 : {{ review.genre }}
             별점 : {{ review.star }}
-            러닝타임 : {{ review.runtime }}
+            러닝타임 : {{ runtime }}
         </p>
 			{{ review.review }}
         </p>
     </article>
-
     <div>
         <a href="/review/{{review.id}}/update">수정</a>
         <form action="/delete/{{review.id}}" method="post">
