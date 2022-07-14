@@ -23,9 +23,9 @@ class Review(models.Model):
         ('DRAMA','드라마'),
         ('DOCUMENTARY','다큐멘터리'),
     )
-    genre = models.CharField(max_length=2, choices=GENRE_CHOICES, verbose_name="장르")
+    genre = models.CharField(max_length=14, choices=GENRE_CHOICES, verbose_name="장르")
     star = models.DecimalField(max_digits=2, decimal_places=1, verbose_name="별점")
-    runtime = models.IntegerField(max_length=50, verbose_name="러닝타임")
+    runtime = models.IntegerField(verbose_name="러닝타임")
     review = models.TextField(verbose_name="리뷰")
     director = models.CharField(max_length=50, verbose_name="감독")
     actor = models.CharField(max_length=50, verbose_name="배우")
