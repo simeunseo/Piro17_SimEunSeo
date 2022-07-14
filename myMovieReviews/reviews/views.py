@@ -47,8 +47,8 @@ def review_update(request, id):
         director = request.POST["director"]
         actor = request.POST["actor"]
         
-        Review.objects.create(title=title, year=year, genre=genre, star=star, runtime=runtime, review=review, director=director, actor=actor)
-        return redirect("f/review/{id}")
+        Review.objects.filter(id=id).update(title=title, year=year, genre=genre, star=star, runtime=runtime, review=review, director=director, actor=actor)
+        return redirect(f"/review/{id}")
     
     elif request.method == "GET":
         review = Review.objects.get(id=id)
