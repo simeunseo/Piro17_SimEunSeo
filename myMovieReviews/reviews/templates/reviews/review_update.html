@@ -7,6 +7,9 @@
     <title>My Movie reviews</title>
   </head>
   <body>
+    <header>
+      <a href="/review">myMoviereviews</a>
+    </header>
     <form action="/review/{{review.id}}/update" method="post">
       {% csrf_token %}
       <span>제목 : </span>

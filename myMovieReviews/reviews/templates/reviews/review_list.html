@@ -7,6 +7,9 @@
     <title>My Movie reviews</title>
   </head>
   <body>
+    <header>
+      <a href="/review">myMoviereviews</a>
+    </header>
     {% for review in reviews %}
     <article>
       <h1><a href="/review/{{review.id}}">{{review.title}}</a></h1>
