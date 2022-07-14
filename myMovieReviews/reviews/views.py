@@ -3,8 +3,24 @@ from .models import Review
 from django.shortcuts import redirect
 
 def review_list(request):
-    reviews = Review.objects.all()
-    context = {"reviews": reviews}
+    order_list = ['작성시간순','개봉년도순','제목순','별점순']
+    order = request.GET.get('order', None)
+    if order == order_list[0]:
+        reviews = Review.objects.all().order_by('-created_date')
+    elif order == order_list[1]:
+        reviews = Review.objects.all().order_by('-year')
+    elif order == order_list[2]:
+        reviews = Review.objects.all().order_by('-title')
+    elif order == order_list[3]:
+        reviews = Review.objects.all().order_by('-star')
+    else :
+        reviews = Review.objects.all()
+        
+    context = {
+        "reviews": reviews,
+        "order_list" : order_list,
+        "order" : order,
+    }
     return render(request, template_name='reviews/review_list.html', context=context) 
 
 def review_create(request):
@@ -56,7 +72,7 @@ def review_update(request, id):
         review = Review.objects.get(id=id)
         context = {
             "review" : review,
-            "genres" : genres
+            "genres" : genres,
         }
         return render(request, template_name="reviews/review_update.html", context=context)
     
