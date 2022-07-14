@@ -29,3 +29,4 @@ class Review(models.Model):
     review = models.TextField(verbose_name="리뷰")
     director = models.CharField(max_length=50, verbose_name="감독")
     actor = models.CharField(max_length=50, verbose_name="배우")
+    created_date = models.DateTimeField(default=timezone.now)
