@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Movie reviews</title>
+  </head>
+  <body>
+    <form action="/review/{{review.id}}/update/" method="post">
+      {% csrf_token %}
+      <span>제목 : </span>
+      <input type="text" name="title" value="{{review.title}}" />
+      <span>개봉년도 : </span>
+      <input type="text" name="year" value="{{review.year}}" />
+      <span>장르 : </span>
+      <select name="genre" autofocus>
+        {% for genre in genres %} {% if genre.0 == review.genre %}
+        <option selected="selected">{{genre.1}}</option>
+        {% else %}
+        <option>{{genre.1}}</option>
+        {% endif %} {% endfor %}
+      </select>
+      <span>별점 : </span>
+      <input type="text" name="star" value="{{review.star}}" />
+      <span>러닝타임 : </span>
+      <input type="text" name="runtime" value="{{review.runtime}}" />
+      <span>리뷰 : </span>
+      <textarea name="review" id="" cols="30" rows="10">
+{{review.review}}</textarea
+      >
+      <span>감독 : </span>
+      <input type="text" name="director" value="{{review.director}}" />
+      <span>배우 : </span>
+      <input type="text" name="actor" value="{{review.actor}}" />
+      <div>
+        <input type="submit" value="제출" />
+      </div>
+    </form>
+    <a href="/">Home</a>
+  </body>
+</html>

@@ -34,3 +34,26 @@ def review_detail(request, id):
         "review" : review
     }
     return render(request, template_name="reviews/review_detail.html", context=context)
+
+def review_update(request, id):
+    genres = Review.GENRE_CHOICES
+    if request.method == "POST":
+        title = request.POST["title"]
+        year = request.POST["year"]
+        genre = request.POST["genre"]
+        star = request.POST["star"]
+        runtime = request.POST["runtime"]
+        review = request.POST["review"]
+        director = request.POST["director"]
+        actor = request.POST["actor"]
+        
+        Review.objects.create(title=title, year=year, genre=genre, star=star, runtime=runtime, review=review, director=director, actor=actor)
+        return redirect("f/review/{id}")
+    
+    elif request.method == "GET":
+        review = Review.objects.get(id=id)
+        context = {
+            "review" : review,
+            "genres" : genres
+        }
+        return render(request, template_name="reviews/review_update.html", context=context)
