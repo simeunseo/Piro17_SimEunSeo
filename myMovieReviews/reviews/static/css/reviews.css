@@ -44,6 +44,10 @@ header .create:hover {
   text-underline-offset: 0.5rem;
 }
 
+.list_main {
+  padding-bottom: 7rem;
+}
+
 #order select {
   font-family: "KOTRA_GOTHIC";
   color: rgb(68, 72, 78);
@@ -307,4 +311,79 @@ select:focus {
   font-size: 14px;
   color: rgb(68, 72, 78);
   background: rgba(255, 202, 26, 0.229);
+}
+
+/*review_detail*/
+.detail_main .box {
+  padding: 2.5rem;
+  margin: 2rem 8rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  border-top: #444 5px;
+  box-shadow: 0px 3px 12px 2px rgba(75, 126, 201, 0.1);
+  height: min-content;
+}
+
+.detail_main .title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.detail_main .buttons {
+  display: flex;
+  justify-content: end;
+  margin: 2rem 8rem;
+}
+
+.detail_main .title h2 {
+  padding-bottom: 1rem;
+  font-family: "KOTRAHOPE";
+  color: rgb(255, 202, 26);
+  font-size: 1.5rem;
+}
+
+.detail_main .btn {
+  font-family: "KOTRA_GOTHIC";
+  text-align: center;
+  width: 2.5rem;
+  border: none;
+  border-radius: 6px;
+  padding: 0.3rem;
+  font-size: 14px;
+  color: #fff;
+  background: rgb(75, 126, 201);
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.detail_main .btn:hover {
+  background: rgb(255, 202, 26);
+}
+
+.detail_main a {
+  line-height: initial;
+  margin-right: 0.5rem;
+}
+
+@media (max-width: 1075px) {
+  .detail_main .buttons {
+    margin: 2rem 2.5rem;
+  }
+  .detail_main .box {
+    margin: 2rem 2.5rem;
+  }
+}
+
+.detail_main .property {
+  font-weight: bold;
+  color: rgb(75, 126, 201);
+  padding-right: 0.25rem;
+}
+
+.detail_main .content div {
+  margin-top: 2rem;
+}
+
+.detail_main .review {
+  background-color: rgba(255, 202, 26, 0.229);
+  border-radius: 0.5rem;
 }

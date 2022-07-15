@@ -19,27 +19,49 @@
         >새 영화 기록하기 <i class="fa-solid fa-pencil"></i
       ></a>
     </header>
-    <article>
-        <h2>
-            {{ review.title }}
-        </h2>
-        <p>
-            개봉년도: {{ review.year }}
-            감독: {{ review.director }}
-            주연: {{ review.actor }}
-            장르 : {{ review.genre }}
-            별점 : {{ review.star }}
-            러닝타임 : {{ runtime }}
-        </p>
-			{{ review.review }}
-        </p>
-    </article>
-    <div>
-        <a href="/review/{{review.id}}/update">수정</a>
+    <div class="detail_main stripe">
+      <div class="buttons">
+        <a class="btn" href="/review/{{review.id}}/update">수정</a>
         <form action="/delete/{{review.id}}" method="post">
-            {% csrf_token%}
-            <button>delete</button>
+          {% csrf_token%}
+          <button class="btn">삭제</button>
         </form>
+      </div>
+      <div class="box">
+        <div class="title">
+          <h2>{{ review.title }}</h2>
+        </div>
+        <div class="content">
+          <div class="year">
+            <span class="property my-wavy">개봉년도</span>
+            <span>{{ review.year }}</span>
+          </div>
+          <div class="director">
+            <span class="property my-wavy">감독</span>
+            <span>{{ review.director }}</span>
+          </div>
+          <div class="actor">
+            <span class="property my-wavy">주연</span>
+            <span>{{ review.actor }}</span>
+          </div>
+          <div class="genre">
+            <span class="property my-wavy">장르</span>
+            <span>{{ review.genre }}</span>
+          </div>
+          <div class="star">
+            <span class="property my-wavy">별점</span>
+            <span>{{ review.star }}</span>
+          </div>
+          <div class="runtime">
+            <span class="property my-wavy">러닝타임</span>
+            <span>{{ runtime }}</span>
+          </div>
+          </br>
+          <div class="review">
+            <p>{{ review.review }}</p>
+          </div>
+        </div>
+      </div>
     </div>
-</body>
+  </body>
 </html>
