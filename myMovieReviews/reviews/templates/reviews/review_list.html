@@ -5,31 +5,62 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Movie reviews</title>
+    <script
+      src="https://kit.fontawesome.com/f578b19b63.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>영화 기록장</title>
     <link rel="stylesheet" href="{% static 'css/reviews.css' %}" />
   </head>
   <body>
     <header>
-      <a href="/review">myMoviereviews</a>
+      <a href="/review" class="logo">영화 기록장</a>
+      <a href="/create" class="create"
+        >새 영화 기록하기 <i class="fa-solid fa-pencil"></i
+      ></a>
     </header>
-    <form action="/review" method="GET">
-      <select name="order">
-        {% for menu in order_list %} {% if menu == order %}
-        <option selected="selected">{{menu}}</option>
-        {% else %}
-        <option>{{menu}}</option>
-        {% endif %} {% endfor %}
-      </select>
-      <input type="submit" value="검색" />
-    </form>
-    {% for review in reviews %}
-    <article>
-      <h1><a href="/review/{{review.id}}">{{review.title}}</a></h1>
-      <p>{{review.year}}</p>
-      <p>{{review.get_genre_display}}</p>
-      <p>{{review.star}} 점</p>
-    </article>
-    {% endfor %}
-    <a href="/create">create</a>
+    <div class="main stripe">
+      <form id="order" action="/review" method="GET">
+        <select name="order">
+          {% for menu in order_list %} {% if menu == order %}
+          <option selected="selected">{{menu}}</option>
+          {% else %}
+          <option>{{menu}}</option>
+          {% endif %} {% endfor %}
+        </select>
+        <input type="submit" value="검색" />
+      </form>
+      <div class="reviews">
+        {% for review in reviews %}
+        <article>
+          <div>
+            <img
+              src="https://picsum.photos/seed/{{review.id}}/150/195"
+              alt=""
+            />
+          </div>
+          <div class="content">
+            <div class="title">
+              <a href="/review/{{review.id}}">{{review.title}}</a>
+            </div>
+            <div class="summary">
+              <div class="year">
+                <span class="property my-wavy">개봉년도</span>
+                <span>{{review.year}}</span>
+              </div>
+              <div class="genre">
+                <span class="property my-wavy">장르</span>
+                <span>{{review.get_genre_display}}</span>
+              </div>
+              <div class="star">
+                <span class="property my-wavy">별점</span>
+                <span>{{review.star}} 점</span>
+              </div>
+            </div>
+          </div>
+        </article>
+        {% endfor %}
+      </div>
+    </div>
   </body>
 </html>

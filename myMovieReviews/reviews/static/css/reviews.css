@@ -1,3 +1,196 @@
+@import "./reset.css";
+@font-face {
+  font-family: "KOTRAHOPE";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/KOTRAHOPE.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "KOTRA_GOTHIC";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/KOTRA_GOTHIC.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+pattern {
+  background: repeating-linear-gradient(#444, #444 10px, #888 0, #888 20px);
+}
+
 body {
-  padding-left: 15px;
+  background-color: rgb(230, 238, 249);
+  font-family: "KOTRA_GOTHIC";
+  color: rgb(68, 72, 78);
+}
+
+header {
+  background-color: white;
+  padding: 3rem 8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: rgb(78, 72, 68);
+}
+
+header .logo {
+  font-family: "KOTRAHOPE";
+  font-size: 2rem;
+  color: rgb(75, 126, 201);
+}
+
+header .create:hover {
+  text-decoration-line: underline;
+  text-decoration-style: wavy;
+  text-decoration-color: rgb(75, 126, 201);
+  text-underline-offset: 0.5rem;
+}
+
+#order select {
+  font-family: "KOTRA_GOTHIC";
+  color: rgb(68, 72, 78);
+  box-sizing: border-box;
+  width: 6.5rem;
+  padding: 0.3rem;
+  font-size: 14px;
+  border-radius: 6px;
+  border: none;
+  box-shadow: 0px 3px 12px 2px rgba(75, 126, 201, 0.1);
+  margin-right: 0.5rem;
+}
+
+#order select:hover,
+.reviews .title:hover,
+#order input:hover {
+  cursor: pointer;
+}
+
+#order option {
+  padding: 0.3rem;
+  font-size: 14px;
+  color: #fff;
+  background: rgb(75, 126, 201);
+}
+
+#order input {
+  font-family: "KOTRA_GOTHIC";
+  width: 2.5rem;
+  border: none;
+  border-radius: 6px;
+  padding: 0.3rem;
+  font-size: 14px;
+  color: #fff;
+  background: rgb(75, 126, 201);
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+#order input:hover {
+  background: rgb(255, 202, 26);
+}
+
+#order {
+  display: flex;
+  justify-content: end;
+  margin: 2rem 8rem;
+}
+
+.create i {
+  font-size: 0.8rem;
+  color: rgb(75, 126, 201);
+}
+
+.stripe {
+  background: repeating-linear-gradient(
+    rgb(75, 126, 201),
+    rgb(75, 126, 201) 0.05rem,
+    rgb(230, 238, 249) 0,
+    rgb(230, 238, 249) 3%
+  );
+}
+
+.reviews {
+  margin: 0 8rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 4rem;
+  justify-items: center;
+}
+
+@media (max-width: 1400px) {
+  .reviews {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.reviews article {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  padding-right: 3.5rem;
+  padding-left: 2.5rem;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  border-top: #444 5px;
+  box-shadow: 0px 3px 12px 2px rgba(75, 126, 201, 0.1);
+  height: min-content;
+}
+
+@media (max-width: 1075px) {
+  .reviews {
+    grid-template-columns: repeat(1, 1fr);
+    margin: 0;
+  }
+  .reviews article {
+    justify-content: center;
+    width: 420px;
+  }
+  #order {
+    margin: 2rem 2.5rem;
+  }
+  header {
+    padding: 3rem 2.5rem;
+  }
+}
+
+.reviews img {
+  padding-right: 1rem;
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.reviews .title {
+  padding-bottom: 1rem;
+  font-family: "KOTRAHOPE";
+  color: rgb(255, 202, 26);
+  font-size: 1.5rem;
+  transition: color 0.2s, transform 0.2s;
+}
+
+.reviews .title:hover {
+  color: rgb(75, 126, 201);
+}
+
+.content {
+  width: max-content;
+}
+
+.summary div {
+  padding-top: 2rem;
+}
+
+.summary .property {
+  font-weight: bold;
+  color: rgb(75, 126, 201);
+  padding-right: 0.25rem;
+}
+
+.my-wavy {
+  text-decoration-line: underline;
+  text-decoration-style: wavy;
+  text-decoration-color: rgb(75, 126, 201);
+  text-underline-offset: 0.5rem;
 }

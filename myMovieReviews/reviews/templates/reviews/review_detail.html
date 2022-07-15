@@ -1,17 +1,24 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Movie reviews</title>
-    <link rel="stylesheet" href="{% static 'css/reviews.css' %}">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/f578b19b63.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>영화 기록장</title>
+    <link rel="stylesheet" href="{% static 'css/reviews.css' %}" />
+  </head>
+  <body>
     <header>
-        <a href="/review">myMoviereviews</a>
-      </header>
+      <a href="/review" class="logo">영화 기록장</a>
+      <a href="/create" class="create"
+        >새 영화 기록하기 <i class="fa-solid fa-pencil"></i
+      ></a>
+    </header>
     <article>
         <h2>
             {{ review.title }}
