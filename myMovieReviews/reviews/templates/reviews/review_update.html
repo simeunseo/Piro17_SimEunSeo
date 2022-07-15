@@ -19,35 +19,54 @@
         >새 영화 기록하기 <i class="fa-solid fa-pencil"></i
       ></a>
     </header>
-    <form action="/review/{{review.id}}/update" method="post">
-      {% csrf_token %}
-      <span>제목 : </span>
-      <input type="text" name="title" value="{{review.title}}" />
-      <span>개봉년도 : </span>
-      <input type="text" name="year" value="{{review.year}}" />
-      <span>장르 : </span>
-      <select name="genre" autofocus>
-        {% for genre in genres %} {% if genre.0 == review.genre %}
-        <option selected="selected">{{genre.1}}</option>
-        {% else %}
-        <option>{{genre.1}}</option>
-        {% endif %} {% endfor %}
-      </select>
-      <span>별점 : </span>
-      <input type="text" name="star" value="{{review.star}}" />
-      <span>러닝타임 : </span>
-      <input type="text" name="runtime" value="{{review.runtime}}" />
-      <span>리뷰 : </span>
-      <textarea name="review" id="" cols="30" rows="10">
-{{review.review}}</textarea
-      >
-      <span>감독 : </span>
-      <input type="text" name="director" value="{{review.director}}" />
-      <span>배우 : </span>
-      <input type="text" name="actor" value="{{review.actor}}" />
-      <div>
-        <input type="submit" value="제출" />
+    <div class="create_main stripe">
+      <div class="box">
+        <div class="sub-title">영화 기록지</div>
+        <form action="/review/{{review.id}}/update" method="post">
+          {% csrf_token %}
+          <div class="form-element title">
+            <span>제목 : </span>
+            <input type="text" name="title" value="{{review.title}}"/>
+          </div>
+          <div class="form-element year">
+            <span>개봉년도 : </span>
+            <input type="text" name="year" value="{{review.year}}"/>
+          </div>
+          <div class="form-element genre">
+            <span>장르 : </span>
+            <select name="genre" autofocus>
+              {% for genre in genres %} {% if genre.0 == review.genre %}
+              <option selected="selected">{{genre.1}}</option>
+              {% else %}
+              <option>{{genre.1}}</option>
+              {% endif %} {% endfor %}
+            </select>
+          </div>
+          <div class="form-element star">
+            <span>별점 : </span>
+            <input type="text" name="star" value="{{review.star}}"/>
+          </div>
+          <div class="form-element runtime">
+            <span>러닝타임 : </span>
+            <input type="text" name="runtime" value="{{review.runtime}}"/>
+          </div>
+          <div class="form-element review">
+            <span>리뷰 : </br></br></span>
+            <textarea name="review" id="" cols="30" rows="10">{{review.review}}</textarea>
+          </div>
+          <div class="form-element director">
+            <span>감독 : </span>
+            <input type="text" name="director" value="{{review.director}}"/>
+          </div>
+          <div class="form-element actor">
+            <span>배우 : </span>
+            <input type="text" name="actor" value="{{review.actor}}"/>
+          </div>
+          <div class="form-element submit">
+            <input class="btn" type="submit" value="수정하기" />
+          </div>
+        </form>
       </div>
-    </form>
+    </div>
   </body>
 </html>

@@ -32,30 +32,40 @@
           <h2>{{ review.title }}</h2>
         </div>
         <div class="content">
-          <div class="year">
-            <span class="property my-wavy">개봉년도</span>
-            <span>{{ review.year }}</span>
-          </div>
-          <div class="director">
-            <span class="property my-wavy">감독</span>
-            <span>{{ review.director }}</span>
-          </div>
-          <div class="actor">
-            <span class="property my-wavy">주연</span>
-            <span>{{ review.actor }}</span>
-          </div>
-          <div class="genre">
-            <span class="property my-wavy">장르</span>
-            <span>{{ review.genre }}</span>
-          </div>
-          <div class="star">
-            <span class="property my-wavy">별점</span>
-            <span>{{ review.star }}</span>
-          </div>
-          <div class="runtime">
-            <span class="property my-wavy">러닝타임</span>
-            <span>{{ runtime }}</span>
-          </div>
+            <div class="image_and_content">
+                <div>
+                    <img
+                      src="https://picsum.photos/seed/{{review.id}}/225/292"
+                      alt=""
+                    />
+                  </div>
+                <div>
+                    <div class="year">
+                        <span class="property my-wavy">개봉년도</span>
+                        <span>{{ review.year }}</span>
+                      </div>
+                      <div class="director">
+                        <span class="property my-wavy">감독</span>
+                        <span>{{ review.director }}</span>
+                      </div>
+                      <div class="actor">
+                        <span class="property my-wavy">주연</span>
+                        <span>{{ review.actor }}</span>
+                      </div>
+                      <div class="genre">
+                        <span class="property my-wavy">장르</span>
+                        <span>{{ review.genre }}</span>
+                      </div>
+                      <div class="star">
+                        <span class="property my-wavy">별점</span>
+                        <span>{{ review.star }}점</span>
+                      </div>
+                      <div class="runtime">
+                        <span class="property my-wavy">러닝타임</span>
+                        <span>{{ runtime }}</span>
+                      </div>
+                </div>
+            </div>
           </br>
           <div class="review">
             <p>{{ review.review }}</p>

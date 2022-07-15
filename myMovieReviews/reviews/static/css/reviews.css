@@ -45,7 +45,7 @@ header .create:hover {
 }
 
 .list_main {
-  padding-bottom: 7rem;
+  padding-bottom: 4rem;
 }
 
 #order select {
@@ -176,7 +176,7 @@ header .create:hover {
   color: rgb(75, 126, 201);
 }
 
-.content {
+.review_create .content {
   width: max-content;
 }
 
@@ -315,7 +315,7 @@ select:focus {
 
 /*review_detail*/
 .detail_main .box {
-  padding: 2.5rem;
+  padding: 3.5rem;
   margin: 2rem 8rem;
   background-color: white;
   border-radius: 0.5rem;
@@ -327,6 +327,7 @@ select:focus {
 .detail_main .title {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 2rem;
 }
 
 .detail_main .buttons {
@@ -380,10 +381,32 @@ select:focus {
 }
 
 .detail_main .content div {
-  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .detail_main .review {
   background-color: rgba(255, 202, 26, 0.229);
   border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+.detail_main p {
+  line-height: 1.5rem;
+}
+
+.detail_main {
+  padding-bottom: 4rem;
+}
+
+.image_and_content {
+  display: flex;
+  align-items: center;
+}
+
+.image_and_content img {
+  padding-right: 2rem;
+  display: block;
+  width: 100%;
+  height: auto;
+  align-items: flex-end;
 }
