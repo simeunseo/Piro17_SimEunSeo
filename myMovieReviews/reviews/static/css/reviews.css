@@ -119,7 +119,7 @@ header .create:hover {
   justify-items: center;
 }
 
-@media (max-width: 1400px) {
+@media (max-width: 1530px) {
   .reviews {
     grid-template-columns: repeat(2, 1fr);
   }
