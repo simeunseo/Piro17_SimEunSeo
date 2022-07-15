@@ -14,9 +14,7 @@
   font-style: normal;
 }
 
-pattern {
-  background: repeating-linear-gradient(#444, #444 10px, #888 0, #888 20px);
-}
+/*review_list*/
 
 body {
   background-color: rgb(230, 238, 249);
@@ -61,8 +59,8 @@ header .create:hover {
 
 #order select:hover,
 .reviews .title:hover,
-#order input:hover {
-  cursor: pointer;
+.btn {
+  cursor: pointer !important;
 }
 
 #order option {
@@ -72,7 +70,7 @@ header .create:hover {
   background: rgb(75, 126, 201);
 }
 
-#order input {
+.btn {
   font-family: "KOTRA_GOTHIC";
   width: 2.5rem;
   border: none;
@@ -84,7 +82,7 @@ header .create:hover {
   transition: background-color 0.2s, transform 0.2s;
 }
 
-#order input:hover {
+.btn:hover {
   background: rgb(255, 202, 26);
 }
 
@@ -100,12 +98,13 @@ header .create:hover {
 }
 
 .stripe {
-  background: repeating-linear-gradient(
-    rgb(75, 126, 201),
-    rgb(75, 126, 201) 0.05rem,
+  background: linear-gradient(
+    rgb(75, 126, 201) 3%,
+    rgb(75, 126, 201) 0,
     rgb(230, 238, 249) 0,
-    rgb(230, 238, 249) 3%
+    rgb(230, 238, 249) 97%
   );
+  background-size: 100% 30px;
 }
 
 .reviews {
@@ -133,7 +132,6 @@ header .create:hover {
   padding-bottom: 4rem;
   background-color: white;
   border-radius: 0.5rem;
-  border-top: #444 5px;
   box-shadow: 0px 3px 12px 2px rgba(75, 126, 201, 0.1);
   height: min-content;
 }
@@ -193,4 +191,120 @@ header .create:hover {
   text-decoration-style: wavy;
   text-decoration-color: rgb(75, 126, 201);
   text-underline-offset: 0.5rem;
+}
+
+/*review_create*/
+
+.create_main {
+  display: flex;
+  justify-content: center;
+}
+
+.create_main .box {
+  padding: 2.5rem;
+  margin: 5rem 0;
+  background-color: white;
+  border-radius: 0.5rem;
+  border-top: #444 5px;
+  box-shadow: 0px 3px 12px 2px rgba(75, 126, 201, 0.1);
+  height: min-content;
+}
+
+.sub-title {
+  text-align: center;
+  font-family: "KOTRAHOPE";
+  color: rgb(255, 202, 26);
+  font-size: 1.5rem;
+  margin-bottom: 3rem;
+  text-decoration-line: underline;
+  text-decoration-style: wavy;
+  text-decoration-color: rgb(255, 202, 26);
+  text-underline-offset: 0.5rem;
+}
+
+.form-element {
+  margin-bottom: 1.5rem;
+}
+
+.create_main input,
+.create_main textarea {
+  font-family: "KOTRA_GOTHIC";
+  border: none;
+  border-radius: 6px;
+  padding: 0.3rem;
+  font-size: 14px;
+  color: rgb(68, 72, 78);
+  border: 0.05rem solid rgb(255, 202, 26);
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.create_main input:focus,
+.create_main textarea:focus {
+  background: rgba(255, 202, 26, 0.229);
+  border: none;
+}
+
+.form-element .btn {
+  font-family: "KOTRA_GOTHIC";
+  width: 4.5rem;
+  border: none;
+  border-radius: 6px;
+  padding: 0.3rem;
+  font-size: 14px;
+  color: #fff;
+  background: rgb(75, 126, 201);
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.form-element .btn:hover {
+  background: rgb(255, 202, 26);
+}
+
+.create_main .submit {
+  text-align: right;
+}
+
+textarea {
+  resize: none;
+  width: 40rem;
+}
+
+@media (max-width: 780px) {
+  textarea {
+    width: 30rem;
+  }
+}
+
+@media (max-width: 590px) {
+  textarea {
+    width: 20rem;
+  }
+}
+
+textarea:focus {
+  outline: none;
+}
+
+select:focus {
+  outline: none;
+}
+
+.create_main select {
+  font-family: "KOTRA_GOTHIC";
+  color: rgb(68, 72, 78);
+  box-sizing: border-box;
+  width: 6.5rem;
+  padding: 0.3rem;
+  font-size: 14px;
+  border-radius: 6px;
+  border: none;
+  margin-right: 0.5rem;
+  border: 0.05rem solid rgb(255, 202, 26);
+}
+
+.create_main option {
+  padding: 0.3rem;
+  font-size: 14px;
+  color: rgb(68, 72, 78);
+  background: rgba(255, 202, 26, 0.229);
 }

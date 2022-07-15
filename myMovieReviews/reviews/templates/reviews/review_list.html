@@ -19,7 +19,7 @@
         >새 영화 기록하기 <i class="fa-solid fa-pencil"></i
       ></a>
     </header>
-    <div class="main stripe">
+    <div class="list_main stripe">
       <form id="order" action="/review" method="GET">
         <select name="order">
           {% for menu in order_list %} {% if menu == order %}
@@ -28,7 +28,7 @@
           <option>{{menu}}</option>
           {% endif %} {% endfor %}
         </select>
-        <input type="submit" value="검색" />
+        <input class="btn" type="submit" value="검색" />
       </form>
       <div class="reviews">
         {% for review in reviews %}
