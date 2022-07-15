@@ -3,23 +3,39 @@ from .models import Review
 from django.shortcuts import redirect
 
 def review_list(request):
-    order_list = ['작성시간순','개봉년도순','제목순','별점순']
-    order = request.GET.get('order', None)
-    if order == order_list[0]:
-        reviews = Review.objects.all().order_by('-created_date')
-    elif order == order_list[1]:
-        reviews = Review.objects.all().order_by('-year')
-    elif order == order_list[2]:
-        reviews = Review.objects.all().order_by('-title')
-    elif order == order_list[3]:
-        reviews = Review.objects.all().order_by('-star')
+    order_1_list = ['작성시간순','개봉년도순','제목순','별점순']
+    order_2_list = ['오름차순', '내림차순']
+    order_1 = request.GET.get('order-1', None)
+    order_2 = request.GET.get('order-2', None)
+    if order_1 == order_1_list[0]:
+        if order_2 == order_2_list[0] :
+            reviews = Review.objects.all().order_by('created_date')
+        else :
+            reviews = Review.objects.all().order_by('-created_date')
+    elif order_1 == order_1_list[1]:
+        if order_2 == order_2_list[0] :
+            reviews = Review.objects.all().order_by('year')
+        else :
+            reviews = Review.objects.all().order_by('-year')
+    elif order_1 == order_1_list[2]:
+        if order_2 == order_2_list[0] :
+            reviews = Review.objects.all().order_by('title')
+        else :
+            reviews = Review.objects.all().order_by('-title')
+    elif order_1 == order_1_list[3]:
+        if order_2 == order_2_list[0] :
+            reviews = Review.objects.all().order_by('star')
+        else :
+            reviews = Review.objects.all().order_by('-star')
     else : #기본 정렬을 작성시간순으로 한다
         reviews = Review.objects.all().order_by('-created_date')
         
     context = {
         "reviews": reviews,
-        "order_list" : order_list,
-        "order" : order,
+        "order_1_list" : order_1_list,
+        "order_2_list" : order_2_list,
+        "order_1" : order_1,
+        "order_2" : order_2,
     }
     return render(request, template_name='reviews/review_list.html', context=context) 
 

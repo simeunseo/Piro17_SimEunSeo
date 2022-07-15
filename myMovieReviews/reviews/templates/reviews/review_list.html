@@ -21,8 +21,15 @@
     </header>
     <div class="list_main stripe">
       <form id="order" action="/review" method="GET">
-        <select name="order">
-          {% for menu in order_list %} {% if menu == order %}
+        <select name="order-1">
+          {% for menu in order_1_list %} {% if menu == order_1 %}
+          <option selected="selected">{{menu}}</option>
+          {% else %}
+          <option>{{menu}}</option>
+          {% endif %} {% endfor %}
+        </select>
+        <select name="order-2">
+          {% for menu in order_2_list %} {% if menu == order_2 %}
           <option selected="selected">{{menu}}</option>
           {% else %}
           <option>{{menu}}</option>
