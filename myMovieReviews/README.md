@@ -16,3 +16,12 @@
 ##### 유의사항
 	1. 리스트 페이지는 http://127.0.0.1:8000/review 입니다.
 	2. create/update 시 항목을 입력할 때 자료형이 맞지 않으면 에러가 나게 됩니다. 개봉년도, 별점, 러닝타임은 숫자로, 나머지는 문자열로 입력해야 합니다. 별점의 경우 자료형이 decimal이기 때문에 1을 입력하면 1.0으로 변환됩니다.
+
+##### list페이지
+![list_page](https://user-images.githubusercontent.com/55528304/179341307-631d21c8-5e75-4917-9698-cacaa0fca1b8.png)
+##### detail페이지
+![detail_page](https://user-images.githubusercontent.com/55528304/179341312-2d93aefc-5931-4131-82d0-7e1e1bd0810b.png)
+##### create페이지
+![create_page](https://user-images.githubusercontent.com/55528304/179341321-60cf2e2c-15ae-4109-863f-798b4de36167.png)
+##### update
+![update_page](https://user-images.githubusercontent.com/55528304/179341323-16be126b-5fab-444f-8948-f718894d79bb.png)
