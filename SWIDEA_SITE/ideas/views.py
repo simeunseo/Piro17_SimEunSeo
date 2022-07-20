@@ -16,9 +16,9 @@ def register(request):
         if form.is_valid():
             idea = form.save(commit=False)
             idea.save()
-            return redirect('')
+            return redirect('/')
         else :
-            return redirect('')
+            return redirect('/')
     else :
         form = IdeaForm()
         return render(request, 'ideas/register.html', {'form' : form})
@@ -40,4 +40,14 @@ def edit(request, id):
             return redirect(f'/detail/{id}')
     else:
         form = IdeaForm(instance=idea)
-    return render(request, 'ideas/register.html',{'form' : form})
+        context = {
+            "idea" : idea,
+            "form" : form
+        }
+        return render(request, 'ideas/edit.html', context=context)
+
+def delete(request, id):
+    if request.method == "POST":
+        idea = Idea.objects.get(id=id)
+        idea.delete()
+    return redirect('/')

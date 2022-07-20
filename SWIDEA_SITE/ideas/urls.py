@@ -8,7 +8,7 @@ app_name = "ideas"
 urlpatterns = [
     path('', views.main, name='main'),
     path('register', views.register, name='register'),
-    path('idea/<int:id>', views.detail, name='detail'),
+    path('detail/<int:id>', views.detail, name='detail'),
     path('edit/<int:id>',views.edit, name="edit"),
-    #path('delete/<int:id>', views.delete, name="delete")
+    path('delete/<int:id>', views.delete, name="delete")
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
