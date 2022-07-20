@@ -26,6 +26,8 @@ def main(request):
     return render(request, template_name='ideas/main.html', context=context)
 
 def register(request):
+    ideas = Idea.objects.all()
+
     if request.method == 'POST':
         form = IdeaForm(request.POST, request.FILES)
         if form.is_valid():
@@ -36,7 +38,11 @@ def register(request):
             return redirect('/')
     else :
         form = IdeaForm()
-        return render(request, 'ideas/register.html', {'form' : form})
+        context={
+            'form':form,
+            'ideas':ideas,
+        }
+        return render(request, 'ideas/register.html', context=context)
 
 def detail(request, id):
     idea = Idea.objects.get(id=id)
@@ -127,12 +133,12 @@ def likes(request):
         idea_id = request.GET['idea_id'] 
         idea = Idea.objects.get(id=idea_id) 
 				
-        if not request.user.is_authenticated: #버튼을 누른 유저가 비로그인 유저일 때
+        if not request.user.is_authenticated:
             message = "로그인을 해주세요"
             context = {'like_count' : idea.like.count(),"message":message}
             return HttpResponse(json.dumps(context), content_type='application/json')
 
-        user = request.user #request.user : 현재 로그인한 유저
+        user = request.user
         if idea.like.filter(id = user.id).exists():
             idea.like.remove(user) 
             message = "좋아요 취소" 

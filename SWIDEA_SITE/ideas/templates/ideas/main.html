@@ -36,10 +36,8 @@
         <article style="margin: 100px 20px">
           <button id="{{idea.id}}" onclick="idea_like(this.id)">
             {%if request.user in idea.like.all%}
-            <!-- 로그인 한 유저가 좋아요를 누른 유저일때  -->
             <i id="heart{{idea.id}}" class="fas fa-star"></i>
             {%else%}
-            <!-- 로그인 한 유저가 좋아요를 누른 유저가 아닐 때  -->
             <i id="heart{{idea.id}}" class="far fa-star"></i>
             {%endif%}
           </button>
@@ -87,13 +85,10 @@
           },
           dataType: "json",
           success: function (response) {
-            // ajax 통신이 정상적으로 완료되었을 때
-            $("#message").html(response.message); //id가 message의 내용을 전송받은 message로 바꾼다
+            $("#message").html(response.message);
             if (response.message == "좋아요") {
-              //좋아요 눌렀을 때
               $("#heart" + id).attr("class", "fas fa-star");
             } else if (response.message == "좋아요 취소") {
-              //좋아요 상태에서 다시 눌렀을 때
               $("#heart" + id).attr("class", "far fa-star");
             }
           },
