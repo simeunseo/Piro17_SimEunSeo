@@ -22,3 +22,10 @@ def register(request):
     else :
         form = IdeaForm()
         return render(request, 'ideas/register.html', {'form' : form})
+
+def detail(request, id):
+    idea = Idea.objects.get(id=id)
+    context = {
+        "idea":idea,
+    }
+    return render(request, template_name="ideas/detail.html",context=context)
