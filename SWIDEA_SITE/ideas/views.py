@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Idea, Tool
-from .forms import IdeaForm
+from .forms import IdeaForm, ToolForm
 from datetime import datetime
 
 def main(request):
@@ -32,12 +32,13 @@ def detail(request, id):
 
 def edit(request, id):
     idea = get_object_or_404(Idea, id=id)
+
     if request.method == "POST":
         form = IdeaForm(request.POST, request.FILES, instance=idea)
         if form.is_valid():
             idea = form.save()
             idea.save()
-            return redirect(f'/detail/{id}')
+        return redirect(f'/detail/{id}')
     else:
         form = IdeaForm(instance=idea)
         context = {
@@ -58,3 +59,23 @@ def tool(request):
         "tools" : tools
     }
     return render(request, template_name='ideas/tool.html', context=context)
+
+def tool_register(request):
+    if request.method == 'POST':
+        form = ToolForm(request.POST)
+        if form.is_valid():
+            tool = form.save(commit=False)
+            tool.save()
+            return redirect('/')
+        else :
+            return redirect('/')
+    else :
+        form = ToolForm()
+        return render(request, 'ideas/tool_register.html', {'form' : form})
+    
+def tool_detail(request,id):
+    tool = Tool.objects.get(id=id)
+    context = {
+        "tool":tool,
+    }
+    return render(request, template_name="ideas/tool_detail.html",context=context)

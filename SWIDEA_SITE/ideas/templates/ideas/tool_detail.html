@@ -16,24 +16,26 @@
     <header>
       <a href="/" class="logo">My SW Idea Manage</a>
     </header>
-    <div class="main">
-      <div class="tools">
-        {% for tool in tools %}
-        <article>
-          <div class="content">
-            <div class="name">
-              <a href="/tool/detail/{{tool.id}}">{{tool.name}}</a>
-            </div>
+    <div class="detail">
+      <div class="buttons">
+            <a class="btn" href="/edit/{{tool.id}}">수정</a>
+            <form action="/delete/{{tool.id}}" method="post">
+              {% csrf_token%}
+              <button class="btn">삭제</button>
+            </form>
+          </div>
+      </div>
+      <div class="box">
+        <div class="name">
+          <h2>{{ tool.name }}</h2>
+        </div>
+        <div class="content">
             <div class="type">
-              <span>{{tool.type}}</span>
+                <span>{{ tool.type }}</span>
             </div>
             <div class="description">
-              <span>{{tool.description}}</span>
+                <span>{{ tool.description }}</span>
             </div>
-          </div>
-        </article>
-        {% endfor %}
-      </div>
-    </div>
+        </div>
   </body>
 </html>

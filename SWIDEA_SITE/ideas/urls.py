@@ -12,4 +12,6 @@ urlpatterns = [
     path('edit/<int:id>',views.edit, name="edit"),
     path('delete/<int:id>', views.delete, name="delete"),
     path('tool',views.tool,name='tool'),
+    path('tool/register',views.tool_register, name='tool_register'),
+    path('tool/detail/<int:id>',views.tool_detail, name='tool_detail'),
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
