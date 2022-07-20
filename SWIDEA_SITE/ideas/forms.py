@@ -26,9 +26,8 @@ class IdeaForm(forms.ModelForm):
         #tool = forms.ChoiceField(choices=new_choices)
         #tool = forms.ChoiceField(choices=[(tool.name, tool.name) for tool in Tool.objects.all()])
     class Meta:
-        new_choices = ('test','test')
         model = Idea
-        
+
         fields = ('name','image','description','interest','tool')
         # tool = forms.ChoiceField(choices=new_choices)
         # widgets = {

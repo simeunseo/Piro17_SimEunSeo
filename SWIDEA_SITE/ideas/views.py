@@ -1,7 +1,12 @@
+import json
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Idea, Tool
 from .forms import IdeaForm, ToolForm
 from datetime import datetime
+from django.http import HttpResponse
+from django.contrib.auth.decorators import login_required
+from django.views.decorators.http import require_POST
+
 
 def main(request):
     ideas = Idea.objects.all()
@@ -75,8 +80,12 @@ def tool_register(request):
     
 def tool_detail(request,id):
     tool = Tool.objects.get(id=id)
+    ideas = Idea.objects.all()
+    for idea in ideas:
+        print(idea.tool.name)
     context = {
         "tool":tool,
+        "ideas":ideas,
     }
     return render(request, template_name="ideas/tool_detail.html",context=context)
 
@@ -102,3 +111,20 @@ def tool_delete(request, id):
         tool = Tool.objects.get(id=id)
         tool.delete()
     return redirect('/tool')
+
+@login_required
+@require_POST
+def idea_like(request):
+    pk = request.POST.get('pk', None)
+    idea = get_object_or_404(Idea, pk=pk)
+    user = request.user
+
+    if idea.likes_user.filter(id=user.id).exists():
+        idea.likes_user.remove(user)
+        message = '좋아요 취소'
+    else:
+        idea.likes_user.add(user)
+        message = '좋아요'
+
+    context = {'likes_count':idea.count_likes_user(), 'message': message}
+    return HttpResponse(json.dumps(context), content_type="application/json")

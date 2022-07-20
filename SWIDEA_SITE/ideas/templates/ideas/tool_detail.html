@@ -23,6 +23,7 @@
     <div class="detail">
       <div class="buttons">
             <a class="btn" href="/tool/edit/{{tool.id}}">수정</a>
+            <a class="btn" href="/tool">목록</a>
             <form action="/tool/delete/{{tool.id}}" method="post">
               {% csrf_token%}
               <button class="btn">삭제</button>
@@ -39,6 +40,14 @@
             </div>
             <div class="description">
                 <span>{{ tool.description }}</span>
+            </div>
+            <div>
+              <span>만들 수 있는 SW 목록</span>
+              {% for idea in ideas %}
+              {% if idea.tool.name == tool.name %}
+              <a href="/detail/{{idea.id}}">{{ idea.name }}</a>
+              {% endif %}
+              {% endfor %}
             </div>
         </div>
   </body>

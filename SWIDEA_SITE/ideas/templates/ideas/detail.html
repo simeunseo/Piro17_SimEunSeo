@@ -23,6 +23,7 @@
     <div class="detail">
       <div class="buttons">
             <a class="btn" href="/edit/{{idea.id}}">수정</a>
+            <a class="btn" href="/">목록</a>
             <form action="/delete/{{idea.id}}" method="post">
               {% csrf_token%}
               <button class="btn">삭제</button>
@@ -45,7 +46,7 @@
                       </div>
                       <div class="tool">
                         <span class="property">예상 개발 툴 : </span>
-                        <span>{{ idea.tool }}</span>
+                        <span>{{ idea.tool.name }}</span>
                       </div>
                       <div class="description">
                         <span class="property">아이디어 설명 : </span>
