@@ -79,3 +79,20 @@ def tool_detail(request,id):
         "tool":tool,
     }
     return render(request, template_name="ideas/tool_detail.html",context=context)
+
+def tool_edit(request, id):
+    tool = get_object_or_404(Tool, id=id)
+
+    if request.method == "POST":
+        form = ToolForm(request.POST, instance=tool)
+        if form.is_valid():
+            tool = form.save()
+            tool.save()
+        return redirect(f'/tool/detail/{id}')
+    else:
+        form = ToolForm(instance=tool)
+        context = {
+            "tool" : tool,
+            "form" : form
+        }
+        return render(request, 'ideas/tool_edit.html', context=context)
