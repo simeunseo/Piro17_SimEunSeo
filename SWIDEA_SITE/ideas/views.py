@@ -3,9 +3,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .models import Idea, Tool
 from .forms import IdeaForm, ToolForm
 from datetime import datetime
-from django.http import HttpResponse
-from django.contrib.auth.decorators import login_required
-from django.views.decorators.http import require_POST
+from django.http import HttpResponse,JsonResponse
 
 
 def main(request):
@@ -112,19 +110,23 @@ def tool_delete(request, id):
         tool.delete()
     return redirect('/tool')
 
-@login_required
-@require_POST
-def idea_like(request):
-    pk = request.POST.get('pk', None)
-    idea = get_object_or_404(Idea, pk=pk)
-    user = request.user
+def likes(request): 
+    if request.META.get('HTTP_X_REQUESTED_WITH') == 'XMLHttpRequest':
+        idea_id = request.GET['idea_id'] 
+        idea = Idea.objects.get(id=idea_id) 
+				
+        if not request.user.is_authenticated: #버튼을 누른 유저가 비로그인 유저일 때
+            message = "로그인을 해주세요"
+            context = {'like_count' : idea.like.count(),"message":message}
+            return HttpResponse(json.dumps(context), content_type='application/json')
 
-    if idea.likes_user.filter(id=user.id).exists():
-        idea.likes_user.remove(user)
-        message = '좋아요 취소'
-    else:
-        idea.likes_user.add(user)
-        message = '좋아요'
+        user = request.user #request.user : 현재 로그인한 유저
+        if idea.like.filter(id = user.id).exists():
+            idea.like.remove(user) 
+            message = "좋아요 취소" 
+        else: 
+            idea.like.add(user) 
+            message = "좋아요" 
 
-    context = {'likes_count':idea.count_likes_user(), 'message': message}
-    return HttpResponse(json.dumps(context), content_type="application/json")
+        context = {'like_count' : idea.like.count(),"message":message}
+        return HttpResponse(json.dumps(context), content_type='application/json')

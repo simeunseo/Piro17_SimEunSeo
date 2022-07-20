@@ -14,15 +14,6 @@ class Idea(models.Model):
     image = models.ImageField(blank=True, upload_to='ideas/%y%m%d', verbose_name="이미지")
     description = models.TextField(verbose_name="설명")
     interest = models.IntegerField(verbose_name="관심도")
-    likes = models.ManyToManyField(settings.AUTH_USER_MODEL, blank=True, related_name='likes_user')
+    like = models.ManyToManyField(settings.AUTH_USER_MODEL, blank=True, related_name='like')
     # tool = models.CharField(max_length=50, verbose_name="개발툴", null=True)
-    def count_likes_user(self): # total likes_user
-        return self.likes_user.count()
-
-    def __str__(self):
-        return self.title
-    
     tool = models.ForeignKey(Tool, on_delete=models.CASCADE, related_name='idea_tool')
-    
-class IdeaStar(models.Model):
-    idea_name = models.CharField(max_length=50, verbose_name="아이디어명")
