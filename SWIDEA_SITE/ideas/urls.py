@@ -17,4 +17,7 @@ urlpatterns = [
     path('tool/edit/<int:id>',views.tool_edit,name="tool_edit"),
     path('tool/delete/<int:id>',views.tool_delete,name="tool_delete"),
     path('like/', views.likes, name="likes"),
+    path('detail/like/', views.likes, name="likes"),
+    path('interest_plus/', views.interest_plus, name="interest_plus"),
+    path('interest_minus/', views.interest_minus, name="interest_minus"),
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

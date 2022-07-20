@@ -142,3 +142,21 @@ def likes(request):
 
         context = {'like_count' : idea.like.count(),"message":message}
         return HttpResponse(json.dumps(context), content_type='application/json')
+    
+def interest_plus(request):
+    if request.META.get('HTTP_X_REQUESTED_WITH') == 'XMLHttpRequest':
+        idea_id = request.GET['idea_id'] 
+        idea = Idea.objects.get(id=idea_id)
+        idea.interest += 1
+        idea.save()
+        context={'interest':idea.interest}
+        return HttpResponse(json.dumps(context), content_type='application/json')
+        
+def interest_minus(request):
+    if request.META.get('HTTP_X_REQUESTED_WITH') == 'XMLHttpRequest':
+        idea_id = request.GET['idea_id'] 
+        idea = Idea.objects.get(id=idea_id) 
+        idea.interest -= 1
+        idea.save()
+        context={'interest':idea.interest}
+        return HttpResponse(json.dumps(context), content_type='application/json')

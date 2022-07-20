@@ -36,13 +36,15 @@
         </div>
         <div class="content">
             <div class="type">
+                <span>종류 : </span>
                 <span>{{ tool.type }}</span>
             </div>
             <div class="description">
+                <span>개발툴 설명 : </span>
                 <span>{{ tool.description }}</span>
             </div>
             <div>
-              <span>만들 수 있는 SW 목록</span>
+              <span>만들 수 있는 SW 목록 : </span>
               {% for idea in ideas %}
               {% if idea.tool.name == tool.name %}
               <a href="/detail/{{idea.id}}">{{ idea.name }}</a>

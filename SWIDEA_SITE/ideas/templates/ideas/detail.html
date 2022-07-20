@@ -36,23 +36,34 @@
         </div>
         <div class="content">
             <div class="image_and_content">
-                <div>
-                    <img src="{{idea.image.url}}" />
-                </div>
-                <div>
-                    <div class="interest">
-                        <span class="property">아이디어 관심도 : </span>
-                        <span>{{ idea.interest }}</span>
-                      </div>
-                      <div class="tool">
-                        <span class="property">예상 개발 툴 : </span>
-                        <span>{{ idea.tool.name }}</span>
-                      </div>
-                      <div class="description">
-                        <span class="property">아이디어 설명 : </span>
-                        <span>{{ idea.description }}</span>
-                      </div>
-                </div>
+              <div class="like">
+                <button id="{{idea.id}}" onclick="idea_like(this.id)">
+                  {%if request.user in idea.like.all%}
+                  <!-- 로그인 한 유저가 좋아요를 누른 유저일때  -->
+                  <i id="heart{{idea.id}}" class="fas fa-star"></i>
+                  {%else%}
+                  <!-- 로그인 한 유저가 좋아요를 누른 유저가 아닐 때  -->
+                  <i id="heart{{idea.id}}" class="far fa-star"></i>
+                  {%endif%}
+                </button>
+              </div>
+              <div>
+                  <img src="{{idea.image.url}}" style="width: 300px; height: 300px" />
+              </div>
+              <div>
+                <div class="interest">
+                    <span class="property">아이디어 관심도 : </span>
+                    <span>{{ idea.interest }}</span>
+                  </div>
+                  <div class="tool">
+                    <span class="property">예상 개발 툴 : </span>
+                    <a href="/tool/detail/{{idea.tool.id}}">{{ idea.tool.name }}</a>
+                  </div>
+                  <div class="description">
+                    <span class="property">아이디어 설명 : </span>
+                    <span>{{ idea.description }}</span>
+                  </div>
+              </div>
             </div>
           </br>
           <div class="review">
@@ -60,5 +71,32 @@
           </div>
         </div>
     </div>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript">
+      function idea_like(id) {
+        $.ajax({
+          url: "like",
+          data: {
+            idea_id: id,
+          },
+          dataType: "json",
+          success: function (response) {
+            // ajax 통신이 정상적으로 완료되었을 때
+            $("#message").html(response.message); //id가 message의 내용을 전송받은 message로 바꾼다
+            if (response.message == "좋아요") {
+              //좋아요 눌렀을 때
+              $("#heart" + id).attr("class", "fas fa-star");
+            } else if (response.message == "좋아요 취소") {
+              //좋아요 상태에서 다시 눌렀을 때
+              $("#heart" + id).attr("class", "far fa-star");
+            }
+          },
+        });
+      }
+    </script>
   </body>
 </html>

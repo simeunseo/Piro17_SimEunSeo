@@ -59,16 +59,19 @@
               </div>
               <div class="interest">
                 <span class="property">아이디어 관심도 : </span>
-                <span>{{idea.interest}}</span>
+                <button id="{{idea.id}}" onclick="idea_interest_plus(this.id)">
+                  +
+                </button>
+                <span id="interest{{idea.id}}">{{idea.interest}}</span>
+                <button id="{{idea.id}}" onclick="idea_interest_minus(this.id)">
+                  -
+                </button>
               </div>
             </div>
           </div>
         </article>
         {% endfor %}
       </div>
-    </div>
-    <div class="toast" style="display: none">
-      <div id="message"></div>
     </div>
     <script
       src="https://code.jquery.com/jquery-3.5.1.js"
@@ -78,16 +81,14 @@
     <script type="text/javascript">
       function idea_like(id) {
         $.ajax({
-          url: "like", // data를 전송할 url 입니다.
+          url: "like",
           data: {
             idea_id: id,
-          }, // post_id 라는 name으로 id 값 전송
+          },
           dataType: "json",
           success: function (response) {
             // ajax 통신이 정상적으로 완료되었을 때
-            $("#like_count").html(response.like_count); //id가 like_count의 내용을 전송받은 좋아요 수로 바꾼다
             $("#message").html(response.message); //id가 message의 내용을 전송받은 message로 바꾼다
-            $(".toast").fadeIn(400).delay(100).fadeOut(400);
             if (response.message == "좋아요") {
               //좋아요 눌렀을 때
               $("#heart" + id).attr("class", "fas fa-star");
@@ -95,6 +96,30 @@
               //좋아요 상태에서 다시 눌렀을 때
               $("#heart" + id).attr("class", "far fa-star");
             }
+          },
+        });
+      }
+      function idea_interest_plus(id) {
+        $.ajax({
+          url: "interest_plus/",
+          data: {
+            idea_id: id,
+          },
+          dataType: "json",
+          success: function (response) {
+            $("#interest" + id).text(response.interest);
+          },
+        });
+      }
+      function idea_interest_minus(id) {
+        $.ajax({
+          url: "interest_minus/",
+          data: {
+            idea_id: id,
+          },
+          dataType: "json",
+          success: function (response) {
+            $("#interest" + id).text(response.interest);
           },
         });
       }

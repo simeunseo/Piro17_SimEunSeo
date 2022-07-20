@@ -13,7 +13,7 @@
     <!--<link rel="stylesheet" href="{% static 'css/reviews.css' %}" />-->
   </head>
   <body>
-    <header>
+    <header style="margin-bottom: 100px">
       <a href="/" class="logo">My SW Idea Manage</a>
       <a href="/register">아이디어 등록</a>
       <a href="/">아이디어 관리</a>
@@ -23,7 +23,7 @@
     <div class="main">
       <div class="tools">
         {% for tool in tools %}
-        <article>
+        <article style="margin-bottom: 30px">
           <div class="content">
             <div class="name">
               <a href="/tool/detail/{{tool.id}}">{{tool.name}}</a>
