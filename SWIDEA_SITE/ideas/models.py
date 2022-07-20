@@ -15,6 +15,6 @@ class Idea(models.Model):
     description = models.TextField(verbose_name="설명")
     interest = models.IntegerField(verbose_name="관심도")
     like = models.ManyToManyField(settings.AUTH_USER_MODEL, blank=True, related_name='like')
-    tool_choice = models.CharField(max_length=50, verbose_name="개발툴", null=True)
-    tool = models.ForeignKey(Tool, on_delete=models.CASCADE, related_name='idea_tool')
+    tool_choice = models.CharField(max_length=50, null=True, verbose_name="개발툴")
+    #tool = models.ForeignKey(Tool, on_delete=models.CASCADE, related_name='idea_tool')
     created_date = models.DateTimeField(default=timezone.now)

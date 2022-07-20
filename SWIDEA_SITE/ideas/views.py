@@ -32,6 +32,7 @@ def register(request):
         form = IdeaForm(request.POST, request.FILES)
         if form.is_valid():
             idea = form.save(commit=False)
+            idea.user = request.user
             idea.save()
             return redirect('/')
         else :
@@ -46,8 +47,13 @@ def register(request):
 
 def detail(request, id):
     idea = Idea.objects.get(id=id)
+    tools = Tool.objects.all()
+    for tool in tools:
+        if tool.name == idea.tool_choice:
+            tool_id = tool.id
     context = {
         "idea":idea,
+        "tool_id":tool_id
     }
     return render(request, template_name="ideas/detail.html",context=context)
 
@@ -97,8 +103,6 @@ def tool_register(request):
 def tool_detail(request,id):
     tool = Tool.objects.get(id=id)
     ideas = Idea.objects.all()
-    for idea in ideas:
-        print(idea.tool.name)
     context = {
         "tool":tool,
         "ideas":ideas,

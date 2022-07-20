@@ -1,3 +1,4 @@
+from sre_parse import Verbose
 from django import forms
 from .models import Idea, Tool
         
@@ -21,25 +22,10 @@ class IdeaForm(forms.ModelForm):
             new_choices.append(temp)
         new_choices = tuple(new_choices)
         
-        self.fields['tool_choice'] = forms.ChoiceField(choices=new_choices)
+        self.fields['tool_choice'] = forms.ChoiceField(choices=new_choices, label="예상 개발 툴")
     class Meta:
         model = Idea
-
         fields = ('name','image','description','interest','tool_choice')
-        # tool = forms.ChoiceField(choices=new_choices)
-        # widgets = {
-        #     'tool' : forms.Select(attrs={'class':'select'})
-        # }
-        # new_choices = list(fields['tool'].choices)
-        # tools = Tool.objects.all()
-        # for tool in tools:
-        #     temp = []
-        #     temp.append(tool.name)
-        #     temp.append(tool.name)
-        #     temp = tuple(temp)
-        #     new_choices.append(temp)
-        # fields['tool'].widget.choices
-
     
 class ToolForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):

@@ -46,7 +46,7 @@
             <div>
               <span>만들 수 있는 SW 목록 : </span>
               {% for idea in ideas %}
-              {% if idea.tool.name == tool.name %}
+              {% if idea.tool_choice == tool.name %}
               <a href="/detail/{{idea.id}}">{{ idea.name }}</a>
               {% endif %}
               {% endfor %}
