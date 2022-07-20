@@ -66,9 +66,9 @@ def tool_register(request):
         if form.is_valid():
             tool = form.save(commit=False)
             tool.save()
-            return redirect('/')
+            return redirect('/tool')
         else :
-            return redirect('/')
+            return redirect('/tool')
     else :
         form = ToolForm()
         return render(request, 'ideas/tool_register.html', {'form' : form})
@@ -96,3 +96,9 @@ def tool_edit(request, id):
             "form" : form
         }
         return render(request, 'ideas/tool_edit.html', context=context)
+    
+def tool_delete(request, id):
+    if request.method == "POST":
+        tool = Tool.objects.get(id=id)
+        tool.delete()
+    return redirect('/tool')
