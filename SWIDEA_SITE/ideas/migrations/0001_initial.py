@@ -29,7 +29,7 @@ class Migration(migrations.Migration):
                 ('image', models.ImageField(blank=True, upload_to='ideas/%y%m%d', verbose_name='이미지')),
                 ('description', models.TextField(verbose_name='설명')),
                 ('interest', models.IntegerField(verbose_name='관심도')),
-                ('tool', models.CharField(choices=[], max_length=50)),
+                ('tool', models.CharField(choices=(), max_length=50)),
                 ('tool_fk', models.ForeignKey(null=True, on_delete=django.db.models.deletion.PROTECT, to='ideas.tool')),
             ],
         ),

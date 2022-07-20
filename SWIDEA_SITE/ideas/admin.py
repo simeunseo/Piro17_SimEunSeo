@@ -1,3 +1,10 @@
 from django.contrib import admin
+from .models import Idea, Tool
 
-# Register your models here.
+@admin.register(Idea)
+class IdeaAdmin(admin.ModelAdmin):
+    pass
+
+@admin.register(Tool)
+class ToolAdmin(admin.ModelAdmin):
+    pass
