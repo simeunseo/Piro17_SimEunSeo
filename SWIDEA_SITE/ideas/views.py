@@ -29,3 +29,15 @@ def detail(request, id):
         "idea":idea,
     }
     return render(request, template_name="ideas/detail.html",context=context)
+
+def edit(request, id):
+    idea = get_object_or_404(Idea, id=id)
+    if request.method == "POST":
+        form = IdeaForm(request.POST, request.FILES, instance=idea)
+        if form.is_valid():
+            idea = form.save()
+            idea.save()
+            return redirect(f'/detail/{id}')
+    else:
+        form = IdeaForm(instance=idea)
+    return render(request, 'ideas/register.html',{'form' : form})

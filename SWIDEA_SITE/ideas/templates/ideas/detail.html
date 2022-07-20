@@ -18,7 +18,7 @@
     </header>
     <div class="detail">
       <div class="buttons">
-            <a class="btn" href="/idea/{{idea.id}}/update">수정</a>
+            <a class="btn" href="/edit/{{idea.id}}">수정</a>
             <form action="/delete/{{idea.id}}" method="post">
               {% csrf_token%}
               <button class="btn">삭제</button>
