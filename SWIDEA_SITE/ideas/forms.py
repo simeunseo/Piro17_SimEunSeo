@@ -9,9 +9,8 @@ class IdeaForm(forms.ModelForm):
         self.fields['image'].required = True
         self.fields['description'].required = True
         self.fields['interest'].required = True
-        self.fields['tool'].required = True
+        self.fields['tool_choice'].required = True
         
-        #choice 목록 동적변경!!! 제가 해냈어요!!!!!!!
         new_choices = []
         tool = Tool.objects.all()
         for t in tool:
@@ -22,12 +21,11 @@ class IdeaForm(forms.ModelForm):
             new_choices.append(temp)
         new_choices = tuple(new_choices)
         
-        self.fields['tool'] = forms.ChoiceField(choices=new_choices)
-       
+        self.fields['tool_choice'] = forms.ChoiceField(choices=new_choices)
     class Meta:
         model = Idea
-        
-        fields = ('name','image','description','interest','tool')
+
+        fields = ('name','image','description','interest','tool_choice')
         # tool = forms.ChoiceField(choices=new_choices)
         # widgets = {
         #     'tool' : forms.Select(attrs={'class':'select'})
