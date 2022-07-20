@@ -7,9 +7,21 @@ from django.http import HttpResponse,JsonResponse
 
 
 def main(request):
-    ideas = Idea.objects.all()
+    order_list = ['찜한순','이름순','등록순','최신순']
+    order = request.GET.get('order', None)
+    if order == order_list[0]:
+        ideas=Idea.objects.all().order_by('-like')
+    elif order == order_list[1]:
+        ideas=Idea.objects.all().order_by('name')
+    elif order == order_list[2]:
+        ideas=Idea.objects.all().order_by('created_date')
+    else : #기본 정렬을 작성시간순으로 한다
+        ideas = Idea.objects.all().order_by('-created_date')
+        
     context = {
-        "ideas" : ideas
+        "ideas" : ideas,
+        "order_list" : order_list,
+        "order" : order,
     }
     return render(request, template_name='ideas/main.html', context=context)
 

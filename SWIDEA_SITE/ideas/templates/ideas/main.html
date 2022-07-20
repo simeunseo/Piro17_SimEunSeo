@@ -21,16 +21,26 @@
       <a href="/tool">개발툴 관리</a>
     </header>
     <div class="main">
+      <form id="order" action="/" method="GET">
+        <select name="order">
+          {% for menu in order_list %} {% if menu == order %}
+          <option selected="selected">{{menu}}</option>
+          {% else %}
+          <option>{{menu}}</option>
+          {% endif %} {% endfor %}
+        </select>
+        <input class="btn" type="submit" value="검색" />
+      </form>
       <div class="ideas" style="display: flex">
         {% for idea in ideas %}
         <article style="margin: 100px 20px">
           <button id="{{idea.id}}" onclick="idea_like(this.id)">
             {%if request.user in idea.like.all%}
             <!-- 로그인 한 유저가 좋아요를 누른 유저일때  -->
-            <i id="heart{{idea.id}}" class="fas fa-heart"></i>
+            <i id="heart{{idea.id}}" class="fas fa-star"></i>
             {%else%}
             <!-- 로그인 한 유저가 좋아요를 누른 유저가 아닐 때  -->
-            <i id="heart{{idea.id}}" class="far fa-heart"></i>
+            <i id="heart{{idea.id}}" class="far fa-star"></i>
             {%endif%}
           </button>
           {% if idea.image %}
@@ -45,7 +55,7 @@
             <div class="summary">
               <div class="tool">
                 <span class="property">예상 개발 툴 : </span>
-                <span>{{idea.tool}}</span>
+                <span>{{idea.tool.name}}</span>
               </div>
               <div class="interest">
                 <span class="property">아이디어 관심도 : </span>
@@ -80,10 +90,10 @@
             $(".toast").fadeIn(400).delay(100).fadeOut(400);
             if (response.message == "좋아요") {
               //좋아요 눌렀을 때
-              $("#heart" + id).attr("class", "fas fa-heart");
+              $("#heart" + id).attr("class", "fas fa-star");
             } else if (response.message == "좋아요 취소") {
               //좋아요 상태에서 다시 눌렀을 때
-              $("#heart" + id).attr("class", "far fa-heart");
+              $("#heart" + id).attr("class", "far fa-star");
             }
           },
         });
