@@ -17,27 +17,18 @@
       <a href="/" class="logo">My SW Idea Manage</a>
     </header>
     <div class="main">
-      <div class="ideas">
-        {% for idea in ideas %}
+      <div class="tools">
+        {% for tool in tools %}
         <article>
-          {% if idea.image %}
-          <div>
-            <img src="{{idea.image.url}}" />
-          </div>
-          {% endif %}
           <div class="content">
             <div class="name">
-              <a href="/detail/{{idea.id}}">{{idea.name}}</a>
+              <a href="/detail/{{tool.id}}">{{tool.name}}</a>
             </div>
-            <div class="summary">
-              <div class="tool">
-                <span class="property">예상 개발 툴 : </span>
-                <span>{{idea.tool}}</span>
-              </div>
-              <div class="interest">
-                <span class="property">아이디어 관심도 : </span>
-                <span>{{idea.interest}}</span>
-              </div>
+            <div class="type">
+              <span>{{tool.type}}</span>
+            </div>
+            <div class="description">
+              <span>{{tool.description}}</span>
             </div>
           </div>
         </article>

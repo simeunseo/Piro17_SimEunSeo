@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import Idea
+from .models import Idea, Tool
 from .forms import IdeaForm
 from datetime import datetime
 
@@ -51,3 +51,10 @@ def delete(request, id):
         idea = Idea.objects.get(id=id)
         idea.delete()
     return redirect('/')
+
+def tool(request):
+    tools = Tool.objects.all()
+    context = {
+        "tools" : tools
+    }
+    return render(request, template_name='ideas/tool.html', context=context)

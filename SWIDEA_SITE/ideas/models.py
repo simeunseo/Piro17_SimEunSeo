@@ -25,4 +25,3 @@ class Idea(models.Model):
     description = models.TextField(verbose_name="설명")
     interest = models.IntegerField(verbose_name="관심도")
     tool = models.CharField(max_length=50, choices=TOOL_CHOICES, verbose_name="개발툴", null=True)
-    
