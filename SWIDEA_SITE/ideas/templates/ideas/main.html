@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/f578b19b63.js"
+      crossorigin="anonymous"
+    ></script>
+    <title></title>
+    <!--<link rel="stylesheet" href="{% static 'css/reviews.css' %}" />-->
+  </head>
+  <body>
+    <header>
+      <a href="" class="logo">My SW Idea Manage</a>
+    </header>
+    <div class="main">
+      <div class="ideas">
+        {% for idea in ideas %}
+        <article>
+          {% if idea.image %}
+          <div>
+            <img src="{{idea.image.url}}" />
+          </div>
+          {% endif %}
+          <div class="content">
+            <div class="title">
+              <a href="/idea/{{idea.id}}">{{idea.name}}</a>
+            </div>
+            <div class="summary">
+              <div class="tool">
+                <span class="property">예상 개발 툴 : </span>
+                <span>{{idea.tool}}</span>
+              </div>
+              <div class="interest">
+                <span class="property">아이디어 관심도 : </span>
+                <span>{{idea.interest}}</span>
+              </div>
+            </div>
+          </div>
+        </article>
+        {% endfor %}
+      </div>
+    </div>
+  </body>
+</html>

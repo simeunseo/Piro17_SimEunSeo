@@ -4,11 +4,15 @@ from .forms import IdeaForm
 from datetime import datetime
 
 def main(request):
-    return render(request, template_name='ideas/main.html')
+    ideas = Idea.objects.all()
+    context = {
+        "ideas" : ideas
+    }
+    return render(request, template_name='ideas/main.html', context=context)
 
 def register(request):
     if request.method == 'POST':
-        form = IdeaForm(request.POST)
+        form = IdeaForm(request.POST, request.FILES)
         if form.is_valid():
             idea = form.save(commit=False)
             idea.save()
