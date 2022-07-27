@@ -1,0 +1,53 @@
+body {
+    display: flex;
+    justify-content: center;
+    text-align:center;
+}
+
+.box{
+    width:500px;
+}
+
+.text{
+    text-align:start;
+}
+
+img{
+    width:500px;
+}
+
+.text{
+    margin-bottom:50px;
+}
+
+.comment{
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttons{
+    display:flex;
+}
+
+form{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+textarea{
+    height:20px;
+}
+
+input{
+    height:30px;
+}
+
+.left-content{
+    display: flex;
+    align-items: center;
+}
+
+.left-content span{
+    margin-right:10px;
+}
